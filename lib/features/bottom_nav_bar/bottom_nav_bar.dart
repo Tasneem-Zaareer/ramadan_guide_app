@@ -18,36 +18,36 @@ class BottomNavBar extends StatelessWidget {
     ];
   }
 
-  List<PersistentBottomNavBarItem> _navBarItems() {
+  List<PersistentBottomNavBarItem> _navBarItems(BuildContext context) {
     return [
       PersistentBottomNavBarItem(
         icon: const Icon(Icons.home),
         title: ("Home"),
-        activeColorPrimary: Colors.brown.shade500,
+        activeColorPrimary: Theme.of(context).colorScheme.onBackground,
         inactiveColorPrimary: Colors.grey,
       ),
       PersistentBottomNavBarItem(
         icon: const Icon(Icons.search),
         title: ("Search"),
-        activeColorPrimary: Colors.brown.shade500,
+        activeColorPrimary: Theme.of(context).colorScheme.onBackground,
         inactiveColorPrimary: Colors.grey,
       ),
       PersistentBottomNavBarItem(
         icon: const Icon(Icons.calendar_month),
         title: ("Calender"),
-        activeColorPrimary: Colors.brown.shade500,
+        activeColorPrimary: Theme.of(context).colorScheme.onBackground,
         inactiveColorPrimary: Colors.grey,
       ),
       PersistentBottomNavBarItem(
         icon: const Icon(Icons.celebration),
         title: ("Eid"),
-        activeColorPrimary: Colors.brown.shade500,
+        activeColorPrimary: Theme.of(context).colorScheme.onBackground,
         inactiveColorPrimary: Colors.grey,
       ),
       PersistentBottomNavBarItem(
         icon: const Icon(Icons.person),
         title: ("Profile"),
-        activeColorPrimary: Colors.brown.shade500,
+        activeColorPrimary: Theme.of(context).colorScheme.onBackground,
         inactiveColorPrimary: Colors.grey,
       ),
     ];
@@ -59,9 +59,9 @@ class BottomNavBar extends StatelessWidget {
       context,
       controller: _controller,
       screens: _buildScreens(),
-      items: _navBarItems(),
+      items: _navBarItems(context),
       // confineInSafeArea: true,
-      backgroundColor: Colors.white, // Default is Colors.white
+      backgroundColor: Theme.of(context).colorScheme.secondary,
       handleAndroidBackButtonPress: true, // Default is true
       resizeToAvoidBottomInset: true, // Default is true
       stateManagement: true, // Default is true

@@ -24,11 +24,8 @@ class OnboardingControl extends StatelessWidget {
           top: 70,
           right: 20,
           child: Container(
-            // alignment: Alignment.bottomCenter,
-            child: Container(
-              child: Row(
-                children: [Icon(Icons.language), CustomText(text: 'Language')],
-              ),
+            child: Row(
+              children: [Icon(Icons.language), CustomText(text: 'Language')],
             ),
           ),
         ),

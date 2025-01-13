@@ -44,7 +44,7 @@ class CustomButton extends StatelessWidget {
             if (states.contains(WidgetState.disabled)) {
               return Colors.grey.shade400;
             }
-            return background ?? Theme.of(context).colorScheme.primary;
+            return background ?? Theme.of(context).colorScheme.secondary;
           }),
           shape: WidgetStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ramadan_guide_app/core/widgets/text/custome_text.dart';
-
 import '../../../core/constants/app_images.dart';
 
 class PrayerTimeView extends StatelessWidget {
@@ -29,7 +28,7 @@ class FeatureImagePrayerTime extends StatelessWidget {
       height: MediaQuery.of(context).size.height * 0.25,
       margin: EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
-        color: Colors.brown.shade100,
+        color: Theme.of(context).colorScheme.secondary,
       ),
       child: Image.asset(
         AppImages.umrah,
@@ -82,7 +81,7 @@ class TodayRamadanTimeItem extends StatelessWidget {
       width: MediaQuery.of(context).size.width * 0.38,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Colors.brown.shade100,
+        color: Theme.of(context).colorScheme.secondary,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -106,13 +105,6 @@ class TodayRamadanTimeItem extends StatelessWidget {
 
 class PrayerTimeList extends StatelessWidget {
   const PrayerTimeList({super.key});
-  // static final List prayerTimesList = [
-  //   ('Fajr', '5:00 AM', Icons.sunny),
-  //   ('Dhuhr', '12:00 PM', Icons.cloud),
-  //   ('Asr', '3:00 PM', Icons.cloud),
-  //   ('Maghrib', '5:00 PM', Icons.cloud),
-  //   ('Isha', '6:00 PM', Icons.cloud),
-  // ];
 
   static final List<Map<String, dynamic>> prayerTimesList = [
     {'name': 'Fajr', 'time': '5:00 AM', 'icon': Icons.sunny},
@@ -162,7 +154,7 @@ class PrayerTimeItem extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Colors.brown.shade100,
+        color: Theme.of(context).colorScheme.secondary,
       ),
       height: MediaQuery.of(context).size.height * 0.08,
       child: Row(
@@ -171,9 +163,13 @@ class PrayerTimeItem extends StatelessWidget {
         children: [
           Icon(icoon),
           SizedBox(width: 5),
-          CustomText(text: prayerName),
+          CustomText(
+            text: prayerName,
+          ),
           Spacer(),
-          CustomText(text: prayertime),
+          CustomText(
+            text: prayertime,
+          ),
         ],
       ),
     );

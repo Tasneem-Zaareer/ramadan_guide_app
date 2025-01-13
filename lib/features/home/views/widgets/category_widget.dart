@@ -44,7 +44,7 @@ class Category extends StatelessWidget {
           Center(
             child: CustomText(
               text: categoryName,
-              color: Colors.white,
+              color: Theme.of(context).colorScheme.onPrimary,
               fontSize: 16,
               fontWeight: FontWeight.w900,
             ),

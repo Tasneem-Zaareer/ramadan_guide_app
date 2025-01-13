@@ -15,7 +15,7 @@ class FeatureImage extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.18,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: Colors.brown.shade100,
+              color: Theme.of(context).colorScheme.secondary,
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
