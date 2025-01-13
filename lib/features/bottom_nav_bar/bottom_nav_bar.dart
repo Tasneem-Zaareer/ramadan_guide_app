@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import '../home/views/home_view.dart';
@@ -28,25 +29,25 @@ class BottomNavBar extends StatelessWidget {
       ),
       PersistentBottomNavBarItem(
         icon: const Icon(Icons.search),
-        title: ("Search"),
+        title: (tr('search')),
         activeColorPrimary: Theme.of(context).colorScheme.onBackground,
         inactiveColorPrimary: Colors.grey,
       ),
       PersistentBottomNavBarItem(
         icon: const Icon(Icons.calendar_month),
-        title: ("Calender"),
+        title: (tr('calendar')),
         activeColorPrimary: Theme.of(context).colorScheme.onBackground,
         inactiveColorPrimary: Colors.grey,
       ),
       PersistentBottomNavBarItem(
         icon: const Icon(Icons.celebration),
-        title: ("Eid"),
+        title: (tr('eid')),
         activeColorPrimary: Theme.of(context).colorScheme.onBackground,
         inactiveColorPrimary: Colors.grey,
       ),
       PersistentBottomNavBarItem(
         icon: const Icon(Icons.person),
-        title: ("Profile"),
+        title: (tr('profile')),
         activeColorPrimary: Theme.of(context).colorScheme.onBackground,
         inactiveColorPrimary: Colors.grey,
       ),

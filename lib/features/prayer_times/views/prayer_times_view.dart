@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:ramadan_guide_app/core/widgets/text/custome_text.dart';
 import '../../../core/constants/app_images.dart';
@@ -44,16 +45,16 @@ class TodayRamadanTimeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         TodayRamadanTimeItem(
-          title: 'Sahoor',
+          title: tr('sahoor'),
           time: '5:00 AM',
           icon: (Icons.sunny),
         ),
         TodayRamadanTimeItem(
-          title: 'Iftar',
+          title: tr('iftar'),
           time: '6:30 PM',
           icon: (Icons.cloud),
         ),
@@ -107,11 +108,11 @@ class PrayerTimeList extends StatelessWidget {
   const PrayerTimeList({super.key});
 
   static final List<Map<String, dynamic>> prayerTimesList = [
-    {'name': 'Fajr', 'time': '5:00 AM', 'icon': Icons.sunny},
-    {'name': 'Dhuhr', 'time': '12:00 PM', 'icon': Icons.cloud},
-    {'name': 'Asr', 'time': '3:00 PM', 'icon': Icons.cloud},
-    {'name': 'Maghrib', 'time': '5:00 PM', 'icon': Icons.cloud},
-    {'name': 'Isha', 'time': '6:00 PM', 'icon': Icons.cloud},
+    {'name': tr('fajr'), 'time': '5:00 AM', 'icon': Icons.sunny},
+    {'name': tr('dhuhr'), 'time': '12:00 PM', 'icon': Icons.cloud},
+    {'name': tr('asr'), 'time': '3:00 PM', 'icon': Icons.cloud},
+    {'name': tr('maghrib'), 'time': '5:00 PM', 'icon': Icons.cloud},
+    {'name': tr('isha'), 'time': '6:00 PM', 'icon': Icons.cloud},
   ];
 
   @override

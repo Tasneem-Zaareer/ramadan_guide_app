@@ -1,5 +1,8 @@
 class AppImages {
   static const String boyWithLantern = 'assets/images/boy_with_lantern.png';
+  static const String girlWithLantern = 'assets/images/girl_with_lantern.png';
+  static const String girlWithMoon = 'assets/images/girl_with_moon.png';
+
   static const String lantern = 'assets/images/lantern.png';
   static const String boyPray = 'assets/images/boy_pray.png';
   static const String quiz = 'assets/images/quiz.png';

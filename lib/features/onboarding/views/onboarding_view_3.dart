@@ -21,7 +21,7 @@ class OnboardingView3 extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          Spacer(flex: 3),
+          // Spacer(flex: 3),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
@@ -43,13 +43,17 @@ class OnboardingView3 extends StatelessWidget {
               ),
             ],
           ),
-          Spacer(flex: 1),
-          Container(
-            height: 350,
-            width: 250,
-            child: Image.asset(
-              AppImages.boyWithLantern,
-              fit: BoxFit.contain,
+          // Spacer(flex: 1),
+          Transform(
+            alignment: Alignment.center,
+            transform: Matrix4.identity()..scale(-1.0, 1.0),
+            child: Container(
+              height: 370,
+              width: 300,
+              child: Image.asset(
+                AppImages.boyPray,
+                fit: BoxFit.contain,
+              ),
             ),
           ),
         ],

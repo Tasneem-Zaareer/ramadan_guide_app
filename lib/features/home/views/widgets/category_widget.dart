@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../../core/widgets/text/custome_text.dart';
 
 class Category extends StatelessWidget {

@@ -43,16 +43,13 @@ class OnboardingView2 extends StatelessWidget {
             ],
           ),
           // Spacer(flex: 1),
-          Transform(
-            alignment: Alignment.center,
-            transform: Matrix4.identity()..scale(-1.0, 1.0),
-            child: Container(
-              height: 370,
-              width: 300,
-              child: Image.asset(
-                AppImages.boyPray,
-                fit: BoxFit.contain,
-              ),
+
+          Container(
+            height: 350,
+            width: 275,
+            child: Image.asset(
+              AppImages.girlWithMoon,
+              fit: BoxFit.contain,
             ),
           ),
         ],
