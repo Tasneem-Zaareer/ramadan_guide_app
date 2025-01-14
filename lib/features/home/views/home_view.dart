@@ -8,16 +8,16 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            FeatureImage(),
-            CategoriesGridviewWidget(),
-            QuizWidget(),
-            QuizWidget(),
-            QuizWidget(),
-          ],
+    return const Scaffold(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              FeatureImage(),
+              CategoriesGridviewWidget(),
+              QuizWidget(),
+            ],
+          ),
         ),
       ),
     );

@@ -27,7 +27,7 @@ class FeatureImagePrayerTime extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height * 0.25,
-      margin: EdgeInsets.only(bottom: 10),
+      margin: const EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.secondary,
       ),
@@ -163,11 +163,11 @@ class PrayerTimeItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Icon(icoon),
-          SizedBox(width: 5),
+          const SizedBox(width: 5),
           CustomText(
             text: prayerName,
           ),
-          Spacer(),
+          const Spacer(),
           CustomText(
             text: prayertime,
           ),

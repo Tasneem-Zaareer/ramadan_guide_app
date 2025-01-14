@@ -2,7 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:ramadan_guide_app/core/widgets/text/custome_text.dart';
 import 'package:ramadan_guide_app/features/bottom_nav_bar/bottom_nav_bar.dart';
-import '../../home/views/home_view.dart';
 import 'onboarding_view_1.dart';
 import 'onboarding_view_2.dart';
 import 'onboarding_view_3.dart';
@@ -29,7 +28,7 @@ class OnboardingControl extends StatelessWidget {
               child: Container(
                 child: Row(
                   children: [
-                    Icon(Icons.language),
+                    const Icon(Icons.language),
                     CustomText(
                       text: 'Language',
                       color: Theme.of(context).colorScheme.onSurface,

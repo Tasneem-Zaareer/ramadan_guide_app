@@ -7,11 +7,13 @@ class Category extends StatelessWidget {
     required this.categoryName,
     required this.categoryImage,
     required this.onTap,
+    required this.categoryColor,
   });
 
   final String categoryName;
   final String categoryImage;
   final Function onTap;
+  final Color categoryColor;
 
   @override
   Widget build(BuildContext context) {
@@ -19,17 +21,17 @@ class Category extends StatelessWidget {
       onTap: () => onTap(),
       child: Stack(
         children: [
-          Column(
+          const Column(
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Image.asset(
-                  categoryImage,
-                  fit: BoxFit.cover,
-                  height: MediaQuery.of(context).size.height * 0.10,
-                  width: MediaQuery.of(context).size.height * 0.23,
-                ),
-              ),
+              // ClipRRect(
+              //   borderRadius: BorderRadius.circular(10),
+              //   child: Image.asset(
+              //     categoryImage,
+              //     fit: BoxFit.cover,
+              //     height: MediaQuery.of(context).size.height * 0.10,
+              //     width: MediaQuery.of(context).size.height * 0.23,
+              //   ),
+              // ),
             ],
           ),
           Container(
@@ -37,7 +39,8 @@ class Category extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.10,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: const Color.fromARGB(255, 71, 50, 42).withOpacity(0.4),
+              // color: categoryColor,
+              color: Theme.of(context).colorScheme.primary,
             ),
           ),
           Center(

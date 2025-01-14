@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ramadan_guide_app/core/constants/app_images.dart';
 import 'package:ramadan_guide_app/core/widgets/text/custome_text.dart';
 
@@ -21,7 +20,7 @@ class OnboardingView1 extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          Spacer(flex: 3),
+          const Spacer(flex: 3),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
@@ -34,16 +33,19 @@ class OnboardingView1 extends StatelessWidget {
                       text: 'The Spirit of Giving',
                       fontSize: 25,
                       fontWeight: FontWeight.w800,
+                      color: Theme.of(context).colorScheme.onSurface,
                     ),
                     CustomText(
-                        text:
-                            'In Ramadan, every act of kindness becomes a bridge to countless blessings.'),
+                      text:
+                          'In Ramadan, every act of kindness becomes a bridge to countless blessings.',
+                      color: Theme.of(context).colorScheme.onSurface,
+                    ),
                   ],
                 ),
               ),
             ],
           ),
-          Spacer(flex: 1),
+          const Spacer(flex: 1),
           Container(
             height: 350,
             width: 250,

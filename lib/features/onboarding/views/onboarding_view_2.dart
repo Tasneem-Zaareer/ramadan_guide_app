@@ -26,17 +26,20 @@ class OnboardingView2 extends StatelessWidget {
             children: [
               Container(
                 width: 200,
-                child: const Column(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CustomText(
                       text: 'A Month of Reflection',
                       fontSize: 25,
                       fontWeight: FontWeight.w800,
+                      color: Theme.of(context).colorScheme.onSurface,
                     ),
                     CustomText(
-                        text:
-                            'Ramadan is a time to cleanse the heart, refresh the soul, and reconnect with your Creator.'),
+                      text:
+                          'Ramadan is a time to cleanse the heart, refresh the soul, and reconnect with your Creator.',
+                      color: Theme.of(context).colorScheme.onSurface,
+                    ),
                   ],
                 ),
               ),
