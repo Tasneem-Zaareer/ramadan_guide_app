@@ -1,5 +1,6 @@
 
 {
+    "skip": "Skip",
     "sahoor": "Sahoor",
     "iftar": "Iftar",
     "fajr": "Fajr",
@@ -11,9 +12,12 @@
     "calender": "Calender",
     "umrah": "Umrah",
     "prayerTimes": "Prayer Times",
-    "home": "Home",
     "search": "Search",
-    "eid": "Eid"
+    "eid": "Eid",
+    "home": "Home",
+    "startQuiz": "Start Quiz",
+    "ramadanQuiz": "Ramadan Quiz",
+    "testYourKnowledgeOfRamadan":"Test your knowledge of Ramadan"
     
 
 }
