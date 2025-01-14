@@ -12,7 +12,6 @@ class QuizWidget extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 25.h, vertical: 10.h),
       child: GestureDetector(
         onTap: () => {
-          Navigator.pop(context),
           Navigator.push(
             context,
             MaterialPageRoute(

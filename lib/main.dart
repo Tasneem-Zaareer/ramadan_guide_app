@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ramadan_guide_app/features/home/views/home_view.dart';
 import 'package:ramadan_guide_app/features/onboarding/views/onboarding_control.dart';
 import 'core/constants/theme.dart';
 
@@ -15,10 +16,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       child: MaterialApp(
-     theme: lightMode,
+        theme: lightMode,
         debugShowCheckedModeBanner: false,
         title: 'Ramadan',
         home: const OnboardingControl(),
+        // home: HomeView(),
       ),
     );
   }
