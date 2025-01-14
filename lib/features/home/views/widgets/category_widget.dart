@@ -21,34 +21,34 @@ class Category extends StatelessWidget {
       onTap: () => onTap(),
       child: Stack(
         children: [
-          const Column(
-            children: [
-              // ClipRRect(
-              //   borderRadius: BorderRadius.circular(10),
-              //   child: Image.asset(
-              //     categoryImage,
-              //     fit: BoxFit.cover,
-              //     height: MediaQuery.of(context).size.height * 0.10,
-              //     width: MediaQuery.of(context).size.height * 0.23,
-              //   ),
-              // ),
-            ],
-          ),
           Container(
-            // width: double.infinity,
             height: MediaQuery.of(context).size.height * 0.10,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              // color: categoryColor,
               color: Theme.of(context).colorScheme.primary,
             ),
           ),
-          Center(
-            child: CustomText(
-              text: categoryName,
-              color: Theme.of(context).colorScheme.onPrimary,
-              fontSize: 16,
-              fontWeight: FontWeight.w900,
+          Positioned(
+            top: 20,
+            left: 10,
+            child: Image.asset(
+              categoryImage,
+              height: MediaQuery.of(context).size.height * 0.1,
+            ),
+          ),
+          Positioned(
+            right: 5,
+            top: 25,
+            child: Container(
+              width: MediaQuery.of(context).size.height * 0.1,
+              child: Center(
+                child: CustomText(
+                  text: categoryName,
+                  color: Theme.of(context).colorScheme.onPrimary,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w900,
+                ),
+              ),
             ),
           ),
         ],

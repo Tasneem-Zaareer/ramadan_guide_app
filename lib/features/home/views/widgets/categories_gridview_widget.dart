@@ -12,44 +12,43 @@ class CategoriesGridviewWidget extends StatelessWidget {
   static final List<Map<String, dynamic>> categoriesList = [
     {
       'title': tr('prayer Times'),
-      'image': AppImages.mosque2,
+      'image': AppImages.girlWithLantern,
       'view': const PrayerTimeView(),
       'color': Colors.amber.shade100
     },
     {
       'title': tr('iftar'),
-      'image': AppImages.iftar,
+      'image': AppImages.boyWithLantern,
       'view': const PrayerTimeView(),
       'color': Colors.deepPurple.shade100
     },
     {
       'title': tr('sahoor'),
-      'image': AppImages.sahoor,
+      'image': AppImages.girlWithLantern,
       'view': const PrayerTimeView(),
       'color': Colors.brown.shade100
     },
     {
       'title': tr('quran'),
-      'image': AppImages.quran,
+      'image': AppImages.boyPray,
       'view': const PrayerTimeView(),
       'color': Colors.blue.shade100
     },
     {
       'title': tr('calender'),
-      'image': AppImages.iftar,
+      'image': AppImages.boyWithLantern,
       'view': const PrayerTimeView(),
       'color': Colors.redAccent.shade100
     },
     {
       'title': tr('umrah'),
-      'image': AppImages.umrah,
+      'image': AppImages.girlWithLantern,
       'view': const PrayerTimeView(),
       'color': Colors.greenAccent.shade100
     },
   ];
   @override
   Widget build(BuildContext context) {
-
     return GridView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),

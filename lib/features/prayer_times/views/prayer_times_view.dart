@@ -92,12 +92,21 @@ class TodayRamadanTimeItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CustomText(text: title),
-                CustomText(text: time),
+                CustomText(
+                  text: title,
+                  color: Theme.of(context).colorScheme.onPrimary,
+                ),
+                CustomText(
+                  text: time,
+                  color: Theme.of(context).colorScheme.onPrimary,
+                ),
               ],
             ),
           ),
-          Icon(icon),
+          Icon(
+            icon,
+            color: Theme.of(context).colorScheme.onPrimary,
+          ),
         ],
       ),
     );
@@ -108,11 +117,11 @@ class PrayerTimeList extends StatelessWidget {
   const PrayerTimeList({super.key});
 
   static final List<Map<String, dynamic>> prayerTimesList = [
-    {'name': tr('fajr'), 'time': '5:00 AM', 'icon': Icons.sunny},
-    {'name': tr('dhuhr'), 'time': '12:00 PM', 'icon': Icons.cloud},
-    {'name': tr('asr'), 'time': '3:00 PM', 'icon': Icons.cloud},
+    {'name': tr('fajr'), 'time': '5:00 AM', 'icon': Icons.circle},
+    {'name': tr('dhuhr'), 'time': '12:00 PM', 'icon': Icons.sunny},
+    {'name': tr('asr'), 'time': '3:00 PM', 'icon': Icons.wb_sunny},
     {'name': tr('maghrib'), 'time': '5:00 PM', 'icon': Icons.cloud},
-    {'name': tr('isha'), 'time': '6:00 PM', 'icon': Icons.cloud},
+    {'name': tr('isha'), 'time': '6:00 PM', 'icon': Icons.bedtime},
   ];
 
   @override
@@ -162,14 +171,19 @@ class PrayerTimeItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Icon(icoon),
+          Icon(
+            icoon,
+            color: Theme.of(context).colorScheme.onPrimary,
+          ),
           const SizedBox(width: 5),
           CustomText(
             text: prayerName,
+            color: Theme.of(context).colorScheme.onPrimary,
           ),
           const Spacer(),
           CustomText(
             text: prayertime,
+            color: Theme.of(context).colorScheme.onPrimary,
           ),
         ],
       ),
