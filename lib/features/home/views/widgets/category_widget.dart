@@ -29,15 +29,15 @@ class Category extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 20,
-            left: 10,
+            top: 15,
+            left: 3,
             child: Image.asset(
               categoryImage,
               height: MediaQuery.of(context).size.height * 0.1,
             ),
           ),
           Positioned(
-            right: 5,
+            right: 0,
             top: 25,
             child: Container(
               width: MediaQuery.of(context).size.height * 0.1,
@@ -46,7 +46,7 @@ class Category extends StatelessWidget {
                   text: categoryName,
                   color: Theme.of(context).colorScheme.onPrimary,
                   fontSize: 16,
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w800,
                 ),
               ),
             ),

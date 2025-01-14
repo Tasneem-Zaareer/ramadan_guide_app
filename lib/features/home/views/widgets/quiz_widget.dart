@@ -9,7 +9,7 @@ class QuizWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 25.h, vertical: 10.h),
+      padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 10.h),
       child: GestureDetector(
         onTap: () => {
           Navigator.push(

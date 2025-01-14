@@ -9,56 +9,68 @@ import 'category_widget.dart';
 class CategoriesGridviewWidget extends StatelessWidget {
   const CategoriesGridviewWidget({super.key});
 
-  static final List<Map<String, dynamic>> categoriesList = [
-    {
-      'title': tr('prayer Times'),
-      'image': AppImages.girlWithLantern,
-      'view': const PrayerTimeView(),
-      'color': Colors.amber.shade100
-    },
-    {
-      'title': tr('iftar'),
-      'image': AppImages.boyWithLantern,
-      'view': const PrayerTimeView(),
-      'color': Colors.deepPurple.shade100
-    },
-    {
-      'title': tr('sahoor'),
-      'image': AppImages.girlWithLantern,
-      'view': const PrayerTimeView(),
-      'color': Colors.brown.shade100
-    },
-    {
-      'title': tr('quran'),
-      'image': AppImages.boyPray,
-      'view': const PrayerTimeView(),
-      'color': Colors.blue.shade100
-    },
-    {
-      'title': tr('calender'),
-      'image': AppImages.boyWithLantern,
-      'view': const PrayerTimeView(),
-      'color': Colors.redAccent.shade100
-    },
-    {
-      'title': tr('umrah'),
-      'image': AppImages.girlWithLantern,
-      'view': const PrayerTimeView(),
-      'color': Colors.greenAccent.shade100
-    },
-  ];
   @override
   Widget build(BuildContext context) {
+    final List<Map<String, dynamic>> categoriesList = [
+      {
+        'title': tr('prayer Times'),
+        'image': AppImages.girlWithLantern,
+        'view': const PrayerTimeView(),
+        'color': Colors.amber.shade100
+      },
+      {
+        'title': tr('calender'),
+        'image': AppImages.boyWithLantern,
+        'view': const PrayerTimeView(),
+        'color': Colors.redAccent.shade100
+      },
+      // {
+      //   'title': tr('iftar'),
+      //   'image': AppImages.boyWithLantern,
+      //   'view': const PrayerTimeView(),
+      //   'color': Colors.deepPurple.shade100
+      // },
+      // {
+      //   'title': tr('sahoor'),
+      //   'image': AppImages.girlWithLantern,
+      //   'view': const PrayerTimeView(),
+      //   'color': Colors.brown.shade100
+      // },
+      {
+        'title': tr('quran'),
+        'image': AppImages.girlWithMoon,
+        'view': const PrayerTimeView(),
+        'color': Colors.blue.shade100
+      },
+      {
+        'title': tr('umrah'),
+        'image': AppImages.girlWithLantern,
+        'view': const PrayerTimeView(),
+        'color': Colors.greenAccent.shade100
+      },
+      {
+        'title': tr('Eid'),
+        'image': AppImages.zakat,
+        'view': const PrayerTimeView(),
+        'color': Colors.greenAccent.shade100
+      },
+      {
+        'title': tr('zakat'),
+        'image': AppImages.zakat,
+        'view': const PrayerTimeView(),
+        'color': Colors.greenAccent.shade100
+      },
+    ];
     return GridView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       itemCount: categoriesList.length,
-      padding: EdgeInsets.symmetric(horizontal: 25.h, vertical: 10.h),
+      padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 10.h),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         mainAxisSpacing: 10,
         crossAxisSpacing: 10,
         crossAxisCount: 2,
-        childAspectRatio: 3 / 1.6,
+        childAspectRatio: 3 / 1.4,
       ),
       itemBuilder: (context, index) => Category(
         categoryName: categoriesList[index]['title'],

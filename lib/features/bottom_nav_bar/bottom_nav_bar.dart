@@ -15,6 +15,7 @@ class BottomNavBar extends StatelessWidget {
       const Center(child: Text("Search Page")),
       const Center(child: Text("Calender Page")),
       const Center(child: Text("Eid Page")),
+      const Center(child: Text("Qibla Page")),
       const Center(child: Text("Profile Page")),
     ];
   }
@@ -42,6 +43,12 @@ class BottomNavBar extends StatelessWidget {
       PersistentBottomNavBarItem(
         icon: const Icon(Icons.celebration),
         title: (tr('eid')),
+        activeColorPrimary: Theme.of(context).colorScheme.tertiary,
+        inactiveColorPrimary: Theme.of(context).colorScheme.tertiaryContainer,
+      ),
+      PersistentBottomNavBarItem(
+        icon: const Icon(Icons.explore),
+        title: (tr('qibla')),
         activeColorPrimary: Theme.of(context).colorScheme.tertiary,
         inactiveColorPrimary: Theme.of(context).colorScheme.tertiaryContainer,
       ),

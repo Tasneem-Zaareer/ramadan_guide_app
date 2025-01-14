@@ -23,4 +23,5 @@ class AppImages {
   static const String umrah = 'assets/images/umrah.png';
   static const String helloRamadan = 'assets/images/helloRamadan.png';
   static const String cloud = 'assets/images/cloud.png';
+  static const String zakat = 'assets/images/zakat.png';
 }
