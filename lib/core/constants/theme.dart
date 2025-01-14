@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 // theme light mode
 ThemeData lightMode = ThemeData(
   brightness: Brightness.light,
-  colorScheme: ColorScheme.light(
-    background: const Color.fromARGB(255, 255, 255, 255),
-    onBackground: Colors.brown.shade500,
-    primary: Colors.brown.shade500,
-    onPrimary: const Color(0xFFFFFFFF), // font color
-    secondary: Colors.brown.shade100,
-    onSecondary: Colors.brown.shade500,
+  colorScheme: const ColorScheme.light(
+    surface: Color.fromARGB(255, 246, 244, 244),
+    onSurface: Color.fromARGB(255, 72, 62, 29),
+    primary: Color.fromARGB(255, 162, 194, 226),
+    onPrimary: Color(0xFFFFFFFF), // font color
+    secondary: Color.fromARGB(255, 162, 194, 226),
+    onSecondary: Color.fromARGB(255, 162, 194, 226),
     // primaryContainer: const Color(0xff01DC82),
     // outline: const Color(0xffEBECF1),
     // secondaryContainer: const Color(0xfff43f5e),
-    // tertiaryContainer: const Color(0xFFDDDDDD),
-    // tertiary: Colors.black,
+    tertiaryContainer: Color.fromARGB(255, 246, 247, 247), //inactive
+    tertiary: Color.fromARGB(255, 255, 250, 163), //active
   ),
 );
 

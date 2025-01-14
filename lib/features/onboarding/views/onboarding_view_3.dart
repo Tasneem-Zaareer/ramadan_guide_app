@@ -34,10 +34,13 @@ class OnboardingView3 extends StatelessWidget {
                       text: 'The Spirit of Giving',
                       fontSize: 25,
                       fontWeight: FontWeight.w800,
+                      color: Theme.of(context).colorScheme.onSurface,
                     ),
                     CustomText(
-                        text:
-                            'In Ramadan, every act of kindness becomes a bridge to countless blessings.'),
+                      text:
+                          'In Ramadan, every act of kindness becomes a bridge to countless blessings.',
+                      color: Theme.of(context).colorScheme.onSurface,
+                    ),
                   ],
                 ),
               ),
