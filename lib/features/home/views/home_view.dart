@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'widgets/categories_gridview_widget.dart';
 import 'widgets/featured_img_widget.dart';
+import 'widgets/gifts_widget.dart';
 import 'widgets/quiz_widget.dart';
 
 class HomeView extends StatelessWidget {
@@ -15,6 +16,7 @@ class HomeView extends StatelessWidget {
             children: [
               FeatureImage(),
               CategoriesGridviewWidget(),
+              GiftsWidget(),
               QuizWidget(),
             ],
           ),

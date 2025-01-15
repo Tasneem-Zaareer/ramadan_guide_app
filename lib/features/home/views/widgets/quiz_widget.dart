@@ -20,8 +20,6 @@ class QuizWidget extends StatelessWidget {
           )
         },
         child: Container(
-            // height: 100,
-            // width: 100,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
             ),

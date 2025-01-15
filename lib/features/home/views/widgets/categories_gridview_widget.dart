@@ -19,7 +19,7 @@ class CategoriesGridviewWidget extends StatelessWidget {
         'color': Colors.amber.shade100
       },
       {
-        'title': tr('calender'),
+        'title': tr('alqaderNight'),
         'image': AppImages.boyWithLantern,
         'view': const PrayerTimeView(),
         'color': Colors.redAccent.shade100
@@ -37,14 +37,14 @@ class CategoriesGridviewWidget extends StatelessWidget {
       //   'color': Colors.brown.shade100
       // },
       {
-        'title': tr('quran'),
-        'image': AppImages.girlWithMoon,
+        'title': tr('alqaderNight'),
+        'image': AppImages.boyPray,
         'view': const PrayerTimeView(),
         'color': Colors.blue.shade100
       },
       {
         'title': tr('umrah'),
-        'image': AppImages.girlWithLantern,
+        'image': AppImages.girlWithMoon,
         'view': const PrayerTimeView(),
         'color': Colors.greenAccent.shade100
       },
