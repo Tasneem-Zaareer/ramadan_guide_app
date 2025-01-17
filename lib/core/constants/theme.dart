@@ -8,13 +8,13 @@ ThemeData lightMode = ThemeData(
     onSurface: Color.fromARGB(255, 72, 62, 29),
     primary: Color.fromARGB(255, 162, 194, 226),
     onPrimary: Color(0xFFFFFFFF), // font color
-    secondary: Color.fromARGB(255, 162, 194, 226),
-    onSecondary: Color.fromARGB(255, 162, 194, 226),
-    // primaryContainer: const Color(0xff01DC82),
+    secondary: Color.fromARGB(255, 42, 10, 146),
+    onSecondary: Color.fromARGB(255, 255, 255, 255),
+    primaryContainer: Color.fromARGB(255, 162, 194, 226),
     // outline: const Color(0xffEBECF1),
     // secondaryContainer: const Color(0xfff43f5e),
-    tertiaryContainer: Color.fromARGB(255, 246, 247, 247), //inactive
-    tertiary: Color.fromARGB(255, 255, 250, 163), //active
+    tertiary: Color.fromARGB(255, 162, 194, 226), //active
+    tertiaryContainer: Color.fromARGB(255, 197, 197, 197), //inactive
   ),
 );
 

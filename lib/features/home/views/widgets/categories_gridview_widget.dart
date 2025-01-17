@@ -24,20 +24,8 @@ class CategoriesGridviewWidget extends StatelessWidget {
         'view': const PrayerTimeView(),
         'color': Colors.redAccent.shade100
       },
-      // {
-      //   'title': tr('iftar'),
-      //   'image': AppImages.boyWithLantern,
-      //   'view': const PrayerTimeView(),
-      //   'color': Colors.deepPurple.shade100
-      // },
-      // {
-      //   'title': tr('sahoor'),
-      //   'image': AppImages.girlWithLantern,
-      //   'view': const PrayerTimeView(),
-      //   'color': Colors.brown.shade100
-      // },
       {
-        'title': tr('alqaderNight'),
+        'title': tr('dua'),
         'image': AppImages.boyPray,
         'view': const PrayerTimeView(),
         'color': Colors.blue.shade100

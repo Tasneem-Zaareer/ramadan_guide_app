@@ -56,7 +56,8 @@ class BottomNavBar extends StatelessWidget {
         icon: const Icon(Icons.person),
         title: (tr('profile')),
         activeColorPrimary: Theme.of(context).colorScheme.tertiary,
-        inactiveColorPrimary: Theme.of(context).colorScheme.tertiaryContainer,
+        inactiveColorPrimary:
+            Theme.of(context).colorScheme.onSurface.withOpacity(0.2),
       ),
     ];
   }
@@ -69,7 +70,7 @@ class BottomNavBar extends StatelessWidget {
       screens: _buildScreens(),
       items: _navBarItems(context),
       // confineInSafeArea: true,
-      backgroundColor: Theme.of(context).colorScheme.secondary,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       handleAndroidBackButtonPress: true, // Default is true
       resizeToAvoidBottomInset: true, // Default is true
       stateManagement: true, // Default is true
