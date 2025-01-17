@@ -29,12 +29,13 @@ class FeatureImagePrayerTime extends StatelessWidget {
       height: MediaQuery.of(context).size.height * 0.25,
       margin: const EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.secondary,
+        color: Theme.of(context).colorScheme.primary,
       ),
       child: Image.asset(
-        AppImages.umrah,
+        AppImages.featureMosque,
         fit: BoxFit.cover,
         width: double.infinity,
+        color: Theme.of(context).colorScheme.surface,
       ),
     );
   }
@@ -45,20 +46,22 @@ class TodayRamadanTimeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        TodayRamadanTimeItem(
-          title: tr('sahoor'),
-          time: '5:00 AM',
-          icon: (Icons.sunny),
-        ),
-        TodayRamadanTimeItem(
-          title: tr('iftar'),
-          time: '6:30 PM',
-          icon: (Icons.cloud),
-        ),
-      ],
+    return Container(
+      child: Row(
+        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          TodayRamadanTimeItem(
+            title: tr('sahoor'),
+            time: '5:00 AM',
+            icon: (Icons.sunny),
+          ),
+          TodayRamadanTimeItem(
+            title: tr('iftar'),
+            time: '6:30 PM',
+            icon: (Icons.cloud),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -76,39 +79,42 @@ class TodayRamadanTimeItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
-      height: MediaQuery.of(context).size.height * 0.08,
-      width: MediaQuery.of(context).size.width * 0.38,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Theme.of(context).colorScheme.secondary,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CustomText(
-                  text: title,
-                  color: Theme.of(context).colorScheme.onPrimary,
-                ),
-                CustomText(
-                  text: time,
-                  color: Theme.of(context).colorScheme.onPrimary,
-                ),
-              ],
-            ),
+    return Column(
+      children: [
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 15),
+          margin: const EdgeInsets.symmetric(horizontal: 25),
+          height: MediaQuery.of(context).size.height * 0.08,
+          width: MediaQuery.of(context).size.width * 0.35,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: Theme.of(context).colorScheme.secondary,
           ),
-          Icon(
-            icon,
-            color: Theme.of(context).colorScheme.onPrimary,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustomText(
+                    text: title,
+                    color: Theme.of(context).colorScheme.onPrimary,
+                  ),
+                  CustomText(
+                    text: time,
+                    color: Theme.of(context).colorScheme.onPrimary,
+                  ),
+                ],
+              ),
+              Icon(
+                icon,
+                color: Theme.of(context).colorScheme.onPrimary,
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
@@ -160,7 +166,7 @@ class PrayerTimeItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       margin: const EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
