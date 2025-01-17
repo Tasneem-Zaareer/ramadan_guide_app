@@ -29,7 +29,7 @@ class Category extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 15,
+            top: 8,
             left: 3,
             child: Image.asset(
               categoryImage,

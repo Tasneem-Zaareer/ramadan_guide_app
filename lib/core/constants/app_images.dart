@@ -25,6 +25,7 @@ class AppImages {
   static const String cloud = 'assets/images/cloud.png';
   static const String zakat = 'assets/images/zakat.png';
   static const String gifts = 'assets/images/gifts.png';
-    static const String giftsTransparent = 'assets/images/gifts_transparent.png';
+  static const String eid = 'assets/images/eid.png';
 
+  static const String giftsTransparent = 'assets/images/gifts_transparent.png';
 }

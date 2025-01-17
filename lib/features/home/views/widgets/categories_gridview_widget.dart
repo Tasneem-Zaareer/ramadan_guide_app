@@ -38,7 +38,7 @@ class CategoriesGridviewWidget extends StatelessWidget {
       },
       {
         'title': tr('Eid'),
-        'image': AppImages.zakat,
+        'image': AppImages.eid,
         'view': const PrayerTimeView(),
         'color': Colors.greenAccent.shade100
       },
