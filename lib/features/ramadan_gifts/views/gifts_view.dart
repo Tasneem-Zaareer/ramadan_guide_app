@@ -2,6 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ramadan_guide_app/core/widgets/buttons/custom_button.dart';
+import 'package:ramadan_guide_app/features/ramadan_gifts/views/declaration_view.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../../core/widgets/text/custome_text.dart';
 import '../ramadan_gift_list.dart';
 
@@ -10,8 +12,26 @@ class GiftsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SafeArea(child: RamadanGiftsGridview()),
+    return Scaffold(
+      appBar: AppBar(
+        actions: [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.h),
+            child: GestureDetector(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const DeclarationView(),
+                ),
+              ),
+              child: const Icon(Icons.info_outline),
+            ),
+          ),
+        ],
+      ),
+      body: const SafeArea(
+        child: RamadanGiftsGridview(),
+      ),
     );
   }
 }
@@ -61,7 +81,7 @@ class ProductThumbnail extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             child: ClipRRect(
               borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(10),
@@ -91,7 +111,11 @@ class ProductThumbnail extends StatelessWidget {
             margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             child: CustomButton(
               title: tr('buyNow'),
-              onPressed: () {},
+              onPressed: () async {
+                await launchUrl(
+                  Uri.parse(productLink),
+                );
+              },
               background:
                   Theme.of(context).colorScheme.secondary.withOpacity(1),
               textColor: Theme.of(context).colorScheme.onSecondary,

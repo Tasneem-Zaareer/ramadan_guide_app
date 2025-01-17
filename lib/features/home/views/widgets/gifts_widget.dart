@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ramadan_guide_app/core/widgets/text/custome_text.dart';
-import 'package:ramadan_guide_app/features/gifts/views/gifts_view.dart';
+import 'package:ramadan_guide_app/features/ramadan_gifts/views/gifts_view.dart';
 import 'package:ramadan_guide_app/features/ramadan_quiz/views/quiz_welcom_view.dart';
 import '../../../../core/constants/app_images.dart';
 

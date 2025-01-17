@@ -1,9 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ramadan_guide_app/features/eid/views/eid_view.dart';
 import 'package:ramadan_guide_app/features/prayer_times/views/prayer_times_view.dart';
 
 import '../../../../core/constants/app_images.dart';
+import '../../../dua/views/dua_view.dart';
 import 'category_widget.dart';
 
 class CategoriesGridviewWidget extends StatelessWidget {
@@ -27,7 +29,7 @@ class CategoriesGridviewWidget extends StatelessWidget {
       {
         'title': tr('dua'),
         'image': AppImages.boyPray,
-        'view': const PrayerTimeView(),
+        'view': const DuaView(),
         'color': Colors.blue.shade100
       },
       {
@@ -39,7 +41,7 @@ class CategoriesGridviewWidget extends StatelessWidget {
       {
         'title': tr('Eid'),
         'image': AppImages.eid,
-        'view': const PrayerTimeView(),
+        'view': const EidView(),
         'color': Colors.greenAccent.shade100
       },
       {
