@@ -88,7 +88,7 @@ class TodayRamadanTimeItem extends StatelessWidget {
           width: MediaQuery.of(context).size.width * 0.35,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: Theme.of(context).colorScheme.secondary,
+            color: Theme.of(context).colorScheme.tertiary,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -170,7 +170,7 @@ class PrayerTimeItem extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Theme.of(context).colorScheme.secondary,
+        color: Theme.of(context).colorScheme.primary,
       ),
       height: MediaQuery.of(context).size.height * 0.08,
       child: Row(

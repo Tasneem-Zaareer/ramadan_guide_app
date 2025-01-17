@@ -67,6 +67,7 @@ class RamadanQuizWelcomeView extends StatelessWidget {
                 background: Theme.of(context).colorScheme.background,
                 title: tr('home'),
                 fontSize: 20,
+                textColor: Theme.of(context).colorScheme.primary,
                 fontWeight: FontWeight.bold,
                 onPressed: () {
                   Navigator.pop(context);

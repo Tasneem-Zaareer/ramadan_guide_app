@@ -13,7 +13,7 @@ ThemeData lightMode = ThemeData(
     primaryContainer: Color.fromARGB(255, 162, 194, 226),
     // outline: const Color(0xffEBECF1),
     // secondaryContainer: const Color(0xfff43f5e),
-    tertiary: Color.fromARGB(255, 162, 194, 226), //active
+    tertiary: Color.fromARGB(255, 123, 155, 186), //active
     tertiaryContainer: Color.fromARGB(255, 197, 197, 197), //inactive
   ),
 );
