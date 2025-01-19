@@ -37,17 +37,19 @@ class Category extends StatelessWidget {
             ),
           ),
           Positioned(
-            right: 0,
+            right: 10,
             top: 25,
             child: Container(
-              width: MediaQuery.of(context).size.height * 0.1,
-              child: Center(
-                child: CustomText(
-                  text: categoryName,
-                  color: Theme.of(context).colorScheme.onPrimary,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w800,
-                ),
+              width: MediaQuery.of(context).size.height * 0.12,
+              padding: EdgeInsets.only(
+                left: MediaQuery.of(context).size.height * 0.04,
+              ),
+              child: CustomText(
+                text: categoryName,
+                color: Theme.of(context).colorScheme.onPrimary,
+                fontSize: 16,
+                fontWeight: FontWeight.w800,
+                textAlign: TextAlign.right,
               ),
             ),
           ),

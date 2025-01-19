@@ -21,9 +21,9 @@ class DuaView extends StatelessWidget {
             crossAxisSpacing: 10,
           ),
           itemBuilder: (context, index) => DuaWigget(
-            duaTitle: tr('iftarTime'),
+            duaTitle: tr('dua'),
             duaImage: AppImages.cloud,
-            duaContent: tr('iftarDua'),
+            duaContent: tr('duaContent'),
           ),
         ),
       ),

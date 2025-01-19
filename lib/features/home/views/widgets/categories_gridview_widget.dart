@@ -6,6 +6,7 @@ import 'package:ramadan_guide_app/features/prayer_times/views/prayer_times_view.
 
 import '../../../../core/constants/app_images.dart';
 import '../../../dua/views/dua_view.dart';
+import '../../../zakat/views/zakat_view.dart';
 import 'category_widget.dart';
 
 class CategoriesGridviewWidget extends StatelessWidget {
@@ -45,9 +46,9 @@ class CategoriesGridviewWidget extends StatelessWidget {
         'color': Colors.greenAccent.shade100
       },
       {
-        'title': tr('zakat'),
+        'title': tr('sadaqahAlfitr'),
         'image': AppImages.zakat,
-        'view': const PrayerTimeView(),
+        'view': const ZakatView(),
         'color': Colors.greenAccent.shade100
       },
     ];

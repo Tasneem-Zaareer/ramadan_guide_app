@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ramadan_guide_app/core/widgets/buttons/custom_button.dart';
 import 'package:ramadan_guide_app/features/ramadan_gifts/views/declaration_view.dart';
+import 'package:ramadan_guide_app/features/ramadan_gifts/views/gift_details_view.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../../core/widgets/text/custome_text.dart';
 import '../ramadan_gift_list.dart';
@@ -73,55 +74,65 @@ class ProductThumbnail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Theme.of(context).colorScheme.secondary.withOpacity(.1),
-      ),
-      child: Column(
-        children: [
-          Container(
-            margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-            child: ClipRRect(
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(10),
-                topRight: Radius.circular(10),
+    return GestureDetector(
+      onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => GiftDetailsView(
+                    productImage: productImage,
+                    productName: productName,
+                    productLink: productLink,
+                  ))),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Theme.of(context).colorScheme.secondary.withOpacity(.1),
+        ),
+        child: Column(
+          children: [
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              child: ClipRRect(
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(10),
+                  topRight: Radius.circular(10),
+                ),
+                child: Image.network(
+                  height: MediaQuery.of(context).size.height * 0.17,
+                  width: MediaQuery.of(context).size.height * 0.5,
+                  productImage,
+                  fit: BoxFit.fitWidth,
+                ),
               ),
-              child: Image.network(
-                height: MediaQuery.of(context).size.height * 0.17,
-                width: MediaQuery.of(context).size.height * 0.5,
-                productImage,
-                fit: BoxFit.fitWidth,
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+              child: CustomText(
+                text: productName,
+                maxLines: 2,
+                textOverflow: TextOverflow.ellipsis,
+                color: Theme.of(context).colorScheme.secondary,
+                fontSize: 15,
+                fontWeight: FontWeight.w600,
               ),
             ),
-          ),
-          Container(
-            margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
-            child: CustomText(
-              text: productName,
-              maxLines: 2,
-              textOverflow: TextOverflow.ellipsis,
-              color: Theme.of(context).colorScheme.secondary,
-              fontSize: 15,
-              fontWeight: FontWeight.w600,
+            const Spacer(),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              child: CustomButton(
+                title: tr('buyNow'),
+                onPressed: () async {
+                  await launchUrl(
+                    Uri.parse(productLink),
+                  );
+                },
+                background:
+                    Theme.of(context).colorScheme.secondary.withOpacity(1),
+                textColor: Theme.of(context).colorScheme.onSecondary,
+              ),
             ),
-          ),
-          const Spacer(),
-          Container(
-            margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-            child: CustomButton(
-              title: tr('buyNow'),
-              onPressed: () async {
-                await launchUrl(
-                  Uri.parse(productLink),
-                );
-              },
-              background:
-                  Theme.of(context).colorScheme.secondary.withOpacity(1),
-              textColor: Theme.of(context).colorScheme.onSecondary,
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
