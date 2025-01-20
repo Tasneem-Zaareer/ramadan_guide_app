@@ -34,24 +34,24 @@ class CategoriesGridviewWidget extends StatelessWidget {
         'view': const DuaView(),
         'color': Colors.blue.shade100
       },
-      {
-        'title': tr('umrah'),
-        'image': AppImages.girlWithMoon,
-        'view': const PrayerTimeView(),
-        'color': Colors.greenAccent.shade100
-      },
+      // {
+      //   'title': tr('umrah'),
+      //   'image': AppImages.girlWithMoon,
+      //   'view': const PrayerTimeView(),
+      //   'color': Colors.greenAccent.shade100
+      // },
       {
         'title': tr('Eid'),
         'image': AppImages.eid,
         'view': const EidView(),
         'color': Colors.greenAccent.shade100
       },
-      {
-        'title': tr('sadaqahAlfitr'),
-        'image': AppImages.zakat,
-        'view': const ZakatView(),
-        'color': Colors.greenAccent.shade100
-      },
+      // {
+      //   'title': tr('sadaqahAlfitr'),
+      //   'image': AppImages.zakat,
+      //   'view': const ZakatView(),
+      //   'color': Colors.greenAccent.shade100
+      // },
     ];
     return GridView.builder(
       shrinkWrap: true,
