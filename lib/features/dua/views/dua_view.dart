@@ -12,6 +12,7 @@ class DuaView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: SafeArea(
         child: GridView.builder(
           itemCount: duasList.length,

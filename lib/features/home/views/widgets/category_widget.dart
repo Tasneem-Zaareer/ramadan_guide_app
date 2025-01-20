@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/widgets/text/custome_text.dart';
 
 class Category extends StatelessWidget {
@@ -19,38 +20,39 @@ class Category extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => onTap(),
-      child: Stack(
+      child: Column(
         children: [
+          // Container(
+          //   height: MediaQuery.of(context).size.height * 0.1,
+          //   decoration: BoxDecoration(
+          //     borderRadius: BorderRadius.circular(10),
+          //     color: Theme.of(context).colorScheme.primary,
+          //   ),
+          // ),
           Container(
-            height: MediaQuery.of(context).size.height * 0.10,
+            height: MediaQuery.of(context).size.height * 0.1,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: Theme.of(context).colorScheme.primary,
             ),
-          ),
-          Positioned(
-            top: 8,
-            left: 3,
-            child: Image.asset(
-              categoryImage,
-              height: MediaQuery.of(context).size.height * 0.1,
-            ),
-          ),
-          Positioned(
-            right: 10,
-            top: 25,
-            child: Container(
-              width: MediaQuery.of(context).size.height * 0.12,
-              padding: EdgeInsets.only(
-                left: MediaQuery.of(context).size.height * 0.04,
-              ),
-              child: CustomText(
-                text: categoryName,
-                color: Theme.of(context).colorScheme.onPrimary,
-                fontSize: 16,
-                fontWeight: FontWeight.w800,
-                textAlign: TextAlign.right,
-              ),
+            child: Row(
+              children: [
+                Image.asset(
+                  categoryImage,
+                  height: MediaQuery.of(context).size.height * 0.09,
+                  fit: BoxFit.contain,
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.height * 0.1,
+                  child: CustomText(
+                    text: categoryName,
+                    color: Theme.of(context).colorScheme.onPrimary,
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w800,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ],
             ),
           ),
         ],

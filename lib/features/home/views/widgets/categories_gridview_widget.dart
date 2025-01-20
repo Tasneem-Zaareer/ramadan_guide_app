@@ -1,13 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:ramadan_guide_app/features/laylat_alqadr/laylat_alqadr_view.dart';
 import 'package:ramadan_guide_app/features/eid/views/eid_view.dart';
 import 'package:ramadan_guide_app/features/prayer_times/views/prayer_times_view.dart';
-
 import '../../../../core/constants/app_images.dart';
 import '../../../dua/views/dua_view.dart';
-import '../../../zakat/views/zakat_view.dart';
+import '../../../eid/views/alfitr_sadaqah_view.dart';
 import 'category_widget.dart';
 
 class CategoriesGridviewWidget extends StatelessWidget {
@@ -18,40 +18,30 @@ class CategoriesGridviewWidget extends StatelessWidget {
     final List<Map<String, dynamic>> categoriesList = [
       {
         'title': tr('prayer Times'),
-        'image': AppImages.girlWithLantern,
+        'image': AppImages.mosqueSmall,
         'view': const PrayerTimeView(),
         'color': Colors.amber.shade100
       },
       {
         'title': tr('laylatAlQadr'),
-        'image': AppImages.boyWithLantern,
+        'image': AppImages.womenPray,
         'view': const LaylatAlQadrView(),
         'color': Colors.redAccent.shade100
       },
       {
         'title': tr('dua'),
-        'image': AppImages.boyPray,
+        'image': AppImages.dua,
         'view': const DuaView(),
         'color': Colors.blue.shade100
       },
-      // {
-      //   'title': tr('umrah'),
-      //   'image': AppImages.girlWithMoon,
-      //   'view': const PrayerTimeView(),
-      //   'color': Colors.greenAccent.shade100
-      // },
+
       {
         'title': tr('Eid'),
-        'image': AppImages.eid,
+        'image': AppImages.dua,
         'view': const EidView(),
         'color': Colors.greenAccent.shade100
       },
-      // {
-      //   'title': tr('sadaqahAlfitr'),
-      //   'image': AppImages.zakat,
-      //   'view': const ZakatView(),
-      //   'color': Colors.greenAccent.shade100
-      // },
+
     ];
     return GridView.builder(
       shrinkWrap: true,
@@ -62,18 +52,24 @@ class CategoriesGridviewWidget extends StatelessWidget {
         mainAxisSpacing: 10,
         crossAxisSpacing: 10,
         crossAxisCount: 2,
-        childAspectRatio: 3 / 1.4,
+        childAspectRatio: 3 / 1.6,
       ),
       itemBuilder: (context, index) => Category(
         categoryName: categoriesList[index]['title'],
         categoryImage: categoriesList[index]['image'],
         onTap: () {
-          Navigator.push(
+          PersistentNavBarNavigator.pushNewScreen(
             context,
-            MaterialPageRoute(
-              builder: (context) => categoriesList[index]['view'],
-            ),
+            screen: categoriesList[index]['view'],
+            withNavBar: false, // Hides the bottom navigation bar
+            pageTransitionAnimation: PageTransitionAnimation.cupertino,
           );
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(
+          //     builder: (context) => categoriesList[index]['view'],
+          //   ),
+          // );
         },
         categoryColor: categoriesList[index]['color'],
       ),

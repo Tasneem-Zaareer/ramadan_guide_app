@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 ThemeData lightMode = ThemeData(
   brightness: Brightness.light,
   colorScheme: const ColorScheme.light(
-    surface: Color.fromARGB(255, 246, 244, 244),
+    surface: Color.fromARGB(255, 244, 244, 244),
     onSurface: Color.fromARGB(255, 72, 62, 29),
     primary: Color.fromARGB(255, 162, 194, 226),
     onPrimary: Color(0xFFFFFFFF), // font color

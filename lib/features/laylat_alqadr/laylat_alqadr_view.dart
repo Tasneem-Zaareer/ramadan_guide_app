@@ -38,6 +38,7 @@ class LaylatAlQadrView extends StatelessWidget {
     ];
 
     return Scaffold(
+      appBar: AppBar(),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -102,8 +103,10 @@ class LaylatAlqadrWidget extends StatelessWidget {
               height: MediaQuery.of(context).size.height * 0.16,
             ),
           ),
-          CustomText(
-            text: infoTitle,
+          Center(
+            child: CustomText(
+              text: infoTitle,
+            ),
           ),
         ],
       ),

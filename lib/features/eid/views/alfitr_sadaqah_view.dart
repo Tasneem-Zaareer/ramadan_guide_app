@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ramadan_guide_app/core/widgets/text/custome_text.dart';
 
-class ZakatView extends StatelessWidget {
-  const ZakatView({super.key});
+class SadaqahAlFitrView extends StatelessWidget {
+  const SadaqahAlFitrView({super.key});
 
   @override
   Widget build(BuildContext context) {

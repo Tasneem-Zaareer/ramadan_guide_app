@@ -39,18 +39,18 @@ class FeatureImage extends StatelessWidget {
             opacity: const AlwaysStoppedAnimation(.9),
           ),
         ),
-        Positioned(
-          right: 5,
-          bottom: 1,
-          child: Image.asset(
-            height: MediaQuery.of(context).size.height * 0.17,
-            AppImages.boyPray,
-            // fit: BoxFit.cover,
-          ),
-        ),
+        // Positioned(
+        //   right: 5,
+        //   bottom: 1,
+        //   child: Image.asset(
+        //     height: MediaQuery.of(context).size.height * 0.17,
+        //     AppImages.boyPray,
+        //     // fit: BoxFit.cover,
+        //   ),
+        // ),
         Positioned(
           left: 50,
-          top: 50,
+          top: 40,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

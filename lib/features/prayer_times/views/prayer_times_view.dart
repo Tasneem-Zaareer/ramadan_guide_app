@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ramadan_guide_app/core/widgets/text/custome_text.dart';
 import '../../../core/constants/app_images.dart';
 
@@ -8,7 +9,7 @@ class PrayerTimeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Column(
         children: [
           FeatureImagePrayerTime(),
@@ -25,18 +26,42 @@ class FeatureImagePrayerTime extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height * 0.25,
-      margin: const EdgeInsets.only(bottom: 10),
-      decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.primary,
-      ),
-      child: Image.asset(
-        AppImages.featureMosque,
-        fit: BoxFit.cover,
-        width: double.infinity,
-        color: Theme.of(context).colorScheme.surface,
-      ),
+    return Stack(
+      children: [
+        Container(
+          height: MediaQuery.of(context).size.height * 0.25,
+          margin: const EdgeInsets.only(bottom: 10),
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.primary,
+          ),
+          child: Image.asset(
+            AppImages.featureMosque,
+            fit: BoxFit.cover,
+            width: double.infinity,
+            color: Theme.of(context).colorScheme.surface,
+          ),
+        ),
+        GestureDetector(
+          onTap: () => Navigator.pop(context),
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 20.h,
+              vertical: 50.h,
+            ),
+            child: Container(
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.onPrimary,
+                shape: BoxShape.circle,
+              ),
+              padding: const EdgeInsets.all(5),
+              child: const Icon(
+                Icons.arrow_back_ios_new,
+                color: Colors.grey,
+              ),
+            ),
+          ),
+        )
+      ],
     );
   }
 }
