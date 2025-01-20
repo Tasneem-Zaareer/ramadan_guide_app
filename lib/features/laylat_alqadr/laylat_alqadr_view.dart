@@ -38,23 +38,33 @@ class LaylatAlQadrView extends StatelessWidget {
     ];
 
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Image.asset(AppImages.helloRamadan),
-            ListView.builder(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: laylatAlQadrInfo.length,
-              itemBuilder: (context, index) {
-                return LaylatAlqadrWidget(
-                  title: laylatAlQadrInfo[index]['title']!,
-                  text: laylatAlQadrInfo[index]['text']!,
-                );
-              },
-            ),
-          ],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              // Image.asset(AppImages.helloRamadan),
+              ListView.builder(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: laylatAlQadrInfo.length,
+                itemBuilder: (context, index) {
+                  return LaylatAlqadrWidget(
+                    infoTitle: laylatAlQadrInfo[index]['title']!,
+                    activityColor: Theme.of(context)
+                        .colorScheme
+                        .secondary
+                        .withOpacity(0.8),
+                    activityImage: AppImages.lantern,
+                  );
+                  // return LaylatAlqadrWidget(
+                  //   title: laylatAlQadrInfo[index]['title']!,
+                  //   text: laylatAlQadrInfo[index]['text']!,
+                  // );
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -63,6 +73,46 @@ class LaylatAlQadrView extends StatelessWidget {
 
 class LaylatAlqadrWidget extends StatelessWidget {
   const LaylatAlqadrWidget({
+    super.key,
+    required this.infoTitle,
+    required this.activityColor,
+    required this.activityImage,
+  });
+
+  final String infoTitle;
+  final Color activityColor;
+  final String activityImage;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      padding: EdgeInsets.only(left: 15.h, right: 15.h, top: 0.h),
+      height: MediaQuery.of(context).size.height * 0.19,
+      decoration: BoxDecoration(
+        color: activityColor,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Stack(
+        children: [
+          Positioned(
+            right: 0,
+            child: Image.asset(
+              activityImage,
+              height: MediaQuery.of(context).size.height * 0.16,
+            ),
+          ),
+          CustomText(
+            text: infoTitle,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class LaylatAlqadrInfoDetails extends StatelessWidget {
+  const LaylatAlqadrInfoDetails({
     super.key,
     required this.title,
     required this.text,

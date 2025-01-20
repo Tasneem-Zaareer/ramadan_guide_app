@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ramadan_guide_app/features/alqader_night/laylat_alqadr_view.dart';
+import 'package:ramadan_guide_app/features/laylat_alqadr/laylat_alqadr_view.dart';
 import 'package:ramadan_guide_app/features/eid/views/eid_view.dart';
 import 'package:ramadan_guide_app/features/prayer_times/views/prayer_times_view.dart';
 
@@ -23,7 +23,7 @@ class CategoriesGridviewWidget extends StatelessWidget {
         'color': Colors.amber.shade100
       },
       {
-        'title': tr('alqaderNight'),
+        'title': tr('laylatAlQadr'),
         'image': AppImages.boyWithLantern,
         'view': const LaylatAlQadrView(),
         'color': Colors.redAccent.shade100

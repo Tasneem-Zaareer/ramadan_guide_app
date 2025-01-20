@@ -12,7 +12,7 @@ class BottomNavBar extends StatelessWidget {
   List<Widget> _buildScreens() {
     return [
       const HomeView(),
-      const Center(child: Text("Search Page")),
+      // const Center(child: Text("Search Page")),
       const Center(child: Text("Calender Page")),
       const Center(child: Text("Eid Page")),
       const Center(child: Text("Qibla Page")),
@@ -28,12 +28,12 @@ class BottomNavBar extends StatelessWidget {
         activeColorPrimary: Theme.of(context).colorScheme.tertiary,
         inactiveColorPrimary: Theme.of(context).colorScheme.tertiaryContainer,
       ),
-      PersistentBottomNavBarItem(
-        icon: const Icon(Icons.search),
-        title: (tr('search')),
-        activeColorPrimary: Theme.of(context).colorScheme.tertiary,
-        inactiveColorPrimary: Theme.of(context).colorScheme.tertiaryContainer,
-      ),
+      // PersistentBottomNavBarItem(
+      //   icon: const Icon(Icons.search),
+      //   title: (tr('search')),
+      //   activeColorPrimary: Theme.of(context).colorScheme.tertiary,
+      //   inactiveColorPrimary: Theme.of(context).colorScheme.tertiaryContainer,
+      // ),
       PersistentBottomNavBarItem(
         icon: const Icon(Icons.calendar_month),
         title: (tr('calendar')),
@@ -69,125 +69,15 @@ class BottomNavBar extends StatelessWidget {
       controller: _controller,
       screens: _buildScreens(),
       items: _navBarItems(context),
-      // confineInSafeArea: true,
       backgroundColor: Theme.of(context).colorScheme.surface,
-      handleAndroidBackButtonPress: true, // Default is true
-      resizeToAvoidBottomInset: true, // Default is true
-      stateManagement: true, // Default is true
-      // hideNavigationBarWhenKeyboardShows: true, // Default is true
+      handleAndroidBackButtonPress: true,
+      resizeToAvoidBottomInset: true,
+      stateManagement: true,
       decoration: NavBarDecoration(
         borderRadius: BorderRadius.circular(10.0),
         colorBehindNavBar: Colors.white,
       ),
-      // popAllScreensOnTapOfSelectedTab: true,
-      // popActionScreens: PopActionScreensType.all,
-      // itemAnimationProperties: ItemAnimationProperties(
-      //   duration: Duration(milliseconds: 200),
-      //   curve: Curves.ease,
-      // ),
-      // screenTransitionAnimation: ScreenTransitionAnimation(
-      //   animateTabTransition: true,
-      //   curve: Curves.ease,
-      //   duration: Duration(milliseconds: 200),
-      // ),
-      navBarStyle:
-          NavBarStyle.style1, // Choose the nav bar style with this property
+      navBarStyle: NavBarStyle.style1,
     );
   }
 }
-
-// import 'package:awesome_bottom_bar/awesome_bottom_bar.dart';
-// import 'package:awesome_bottom_bar/widgets/inspired/inspired.dart';
-// import 'package:easy_localization/easy_localization.dart';
-// import 'package:flutter/material.dart';
-// import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-// import '../home/views/home_view.dart';
-
-// class BottomNavBarApp extends StatefulWidget {
-//   final int? index;
-
-//   const BottomNavBarApp({
-//     super.key,
-//     this.index,
-//   });
-
-//   @override
-//   BottomNavBarAppState createState() => BottomNavBarAppState();
-// }
-
-// class BottomNavBarAppState extends State<BottomNavBarApp> {
-//   late int initialIndex;
-//   List<Widget> screens = [
-//     const HomeView(),
-//     const Center(child: Text("Search Page")),
-//     const Center(child: Text("Calender Page")),
-//     const Center(child: Text("Eid Page")),
-//     const Center(child: Text("Profile Page")),
-//   ];
-//   @override
-//   void initState() {
-//     super.initState();
-//     initialIndex = widget.index ?? 0;
-//   }
-
-//   final List<TabItem> items = [
-//     TabItem(
-//       icon: Icons.home,
-//       title: tr('search'),
-//     ),
-//     TabItem(
-//       icon: Icons.favorite_border,
-//       title: tr('claendar'),
-//     ),
-//     TabItem(
-//       icon: Icons.search_sharp,
-//       title: tr('eid'),
-//     ),
-//     TabItem(
-//       icon: Icons.account_box,
-//       title: tr('profile'),
-//     ),
-//   ];
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       // drawer: const AppDrawer(),
-//       // appBar: AppBar(
-//       //   centerTitle: false,
-//       //   backgroundColor: Theme.of(context).colorScheme.onPrimary,
-//       //   leading: Builder(
-//       //     builder: (BuildContext context) {
-//       //       return InkWell(
-//       //         onTap: () {
-//       //           Scaffold.of(context).openDrawer();
-//       //         },
-//       //         child: Icon(
-//       //           Icons.menu,
-//       //           size: 28.h,
-//       //         ),
-//       //       );
-//       //     },
-//       //   ),
-
-//       // ),
-//       body: screens[initialIndex],
-//       bottomNavigationBar: BottomBarInspiredInside(
-//         backgroundColor: Theme.of(context).colorScheme.primary,
-//         items: items,
-//         color: Colors.white,
-//         colorSelected: Colors.white,
-//         indexSelected: initialIndex,
-//         onTap: (int selectedIndex) => setState(() {
-//           initialIndex = selectedIndex;
-//         }),
-//         chipStyle: ChipStyle(
-//           convexBridge: true,
-//           background: Theme.of(context).colorScheme.onSecondary,
-//         ),
-//         itemStyle: ItemStyle.circle,
-//         animated: false,
-//       ),
-//     );
-//   }
-// }
