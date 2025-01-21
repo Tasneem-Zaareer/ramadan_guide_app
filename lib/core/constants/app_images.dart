@@ -33,11 +33,13 @@ class AppImages {
 
   static const String giftsTransparent = 'assets/images/gifts_transparent.png';
   static const String whiteMosque = 'assets/images/mosque_white.png';
-  static const String whiteMosqueWithoutClouds = 'assets/images/mosque_white2.png';
+  static const String whiteMosqueWithoutClouds =
+      'assets/images/mosque_white2.png';
   static const String clouds = 'assets/images/clouds.png';
   static const String dua = 'assets/images/dua.png';
   static const String womenPray = 'assets/images/women_pray.png';
   static const String mosqueColor = 'assets/images/mosque_color.png';
-    static const String mosqueSmall = 'assets/images/mosque_small.png';
-
+  static const String mosqueSmall = 'assets/images/mosque_small.png';
+  static const String twoMen = 'assets/images/two_men.png';
+  static const String twoMenBk = 'assets/images/two_men_bk.png';
 }

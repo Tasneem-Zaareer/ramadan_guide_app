@@ -34,14 +34,12 @@ class CategoriesGridviewWidget extends StatelessWidget {
         'view': const DuaView(),
         'color': Colors.blue.shade100
       },
-
       {
-        'title': tr('Eid'),
-        'image': AppImages.dua,
+        'title': tr('eid'),
+        'image': AppImages.twoMen,
         'view': const EidView(),
         'color': Colors.greenAccent.shade100
       },
-
     ];
     return GridView.builder(
       shrinkWrap: true,
@@ -52,7 +50,7 @@ class CategoriesGridviewWidget extends StatelessWidget {
         mainAxisSpacing: 10,
         crossAxisSpacing: 10,
         crossAxisCount: 2,
-        childAspectRatio: 3 / 1.6,
+        childAspectRatio: 1 / 1.112,
       ),
       itemBuilder: (context, index) => Category(
         categoryName: categoriesList[index]['title'],

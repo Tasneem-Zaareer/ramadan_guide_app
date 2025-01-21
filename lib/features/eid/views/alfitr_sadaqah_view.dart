@@ -44,24 +44,28 @@ class SadaqahAlFitrView extends StatelessWidget {
     };
 
     return Scaffold(
+        appBar: AppBar(),
         body: SafeArea(
             child: ListView.builder(
-      padding: EdgeInsets.symmetric(horizontal: 25),
-      physics: NeverScrollableScrollPhysics(),
-      shrinkWrap: true,
-      itemCount: 5,
-      itemBuilder: (BuildContext context, int index) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10),
-          child: Column(
-            children: [
-              CustomText(
-                text: sadaqahAlFitrMapInfo[index]['title'],
-              )
-            ],
-          ),
-        );
-      },
-    )));
+          padding: EdgeInsets.symmetric(horizontal: 25),
+          physics: NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          itemCount: 5,
+          itemBuilder: (BuildContext context, int index) {
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Column(
+                children: [
+                  CustomText(
+                    text: sadaqahAlFitrMapInfo['title'],
+                    fontSize: 20,
+                    fontWeight: FontWeight.w900,
+                    color: Theme.of(context).colorScheme.onSurface,
+                  )
+                ],
+              ),
+            );
+          },
+        )));
   }
 }

@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/widgets/text/custome_text.dart';
@@ -20,37 +22,33 @@ class Category extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => onTap(),
-      child: Column(
+      child: Stack(
         children: [
-          // Container(
-          //   height: MediaQuery.of(context).size.height * 0.1,
-          //   decoration: BoxDecoration(
-          //     borderRadius: BorderRadius.circular(10),
-          //     color: Theme.of(context).colorScheme.primary,
-          //   ),
-          // ),
           Container(
-            height: MediaQuery.of(context).size.height * 0.1,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: Theme.of(context).colorScheme.primary,
             ),
-            child: Row(
+          ),
+          Positioned(
+            top: 10,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            child: Column(
               children: [
+                CustomText(
+                  text: categoryName,
+                  color: Theme.of(context).colorScheme.onPrimary,
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w800,
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 10.h),
                 Image.asset(
                   categoryImage,
-                  height: MediaQuery.of(context).size.height * 0.09,
-                  fit: BoxFit.contain,
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.height * 0.1,
-                  child: CustomText(
-                    text: categoryName,
-                    color: Theme.of(context).colorScheme.onPrimary,
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w800,
-                    textAlign: TextAlign.center,
-                  ),
+                  height: MediaQuery.of(context).size.height * 0.16,
+                  fit: BoxFit.cover,
                 ),
               ],
             ),
