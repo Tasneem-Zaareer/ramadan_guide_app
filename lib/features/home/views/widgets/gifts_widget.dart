@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:ramadan_guide_app/core/widgets/text/custome_text.dart';
 import 'package:ramadan_guide_app/features/ramadan_gifts/views/gifts_view.dart';
 import 'package:ramadan_guide_app/features/ramadan_quiz/views/quiz_welcom_view.dart';
@@ -15,12 +16,18 @@ class GiftsWidget extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 10.h),
       child: GestureDetector(
         onTap: () => {
-          Navigator.push(
+          PersistentNavBarNavigator.pushNewScreen(
             context,
-            MaterialPageRoute(
-              builder: (context) => const GiftsView(),
-            ),
-          )
+            screen: GiftsView(),
+            withNavBar: false, // Hides the bottom navigation bar
+            pageTransitionAnimation: PageTransitionAnimation.cupertino,
+          ),
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(
+          //     builder: (context) => const GiftsView(),
+          //   ),
+          // )
         },
         child: Stack(
           children: [

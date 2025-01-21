@@ -76,7 +76,7 @@ class GiftDetailsView extends StatelessWidget {
             ],
           ),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 20.h),
+            margin: EdgeInsets.symmetric(horizontal: 20.h, vertical: 20.h),
             child: CustomButton(
               title: tr('buyNow'),
               onPressed: () async {
