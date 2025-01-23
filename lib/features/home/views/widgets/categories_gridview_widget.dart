@@ -17,7 +17,7 @@ class CategoriesGridviewWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<Map<String, dynamic>> categoriesList = [
       {
-        'title': tr('prayer Times'),
+        'title': tr('prayerTimes'),
         'image': AppImages.mosqueSmall,
         'view': const PrayerTimeView(),
         'color': Colors.amber.shade100
@@ -50,7 +50,7 @@ class CategoriesGridviewWidget extends StatelessWidget {
         mainAxisSpacing: 10,
         crossAxisSpacing: 10,
         crossAxisCount: 2,
-        childAspectRatio: 1 / 1.112,
+        childAspectRatio: 1,
       ),
       itemBuilder: (context, index) => Category(
         categoryName: categoriesList[index]['title'],

@@ -87,7 +87,7 @@ class LaylatAlqadrWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      margin:  EdgeInsets.symmetric(horizontal: 20.h, vertical: 10),
       padding: EdgeInsets.only(left: 15.h, right: 15.h, top: 0.h),
       height: MediaQuery.of(context).size.height * 0.19,
       decoration: BoxDecoration(

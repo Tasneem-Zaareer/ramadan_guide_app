@@ -91,7 +91,7 @@ class ProductThumbnail extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              margin:  EdgeInsets.symmetric(horizontal: 10.h, vertical: 10),
               child: ClipRRect(
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(10),
@@ -106,7 +106,7 @@ class ProductThumbnail extends StatelessWidget {
               ),
             ),
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+              margin:  EdgeInsets.symmetric(horizontal: 10.h, vertical: 3),
               child: CustomText(
                 text: productName,
                 maxLines: 2,
@@ -118,7 +118,7 @@ class ProductThumbnail extends StatelessWidget {
             ),
             const Spacer(),
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              margin:  EdgeInsets.symmetric(horizontal: 10.h ,vertical: 10),
               child: CustomButton(
                 title: tr('buyNow'),
                 onPressed: () async {

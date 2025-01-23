@@ -74,7 +74,7 @@ class DuaContentView extends StatelessWidget {
             },
             child: Container(
               padding: const EdgeInsets.all(10),
-              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+              margin:  EdgeInsets.symmetric(horizontal: 20.h, vertical: 50),
               decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.primary,
                 shape: BoxShape.circle,

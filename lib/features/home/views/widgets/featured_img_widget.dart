@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ramadan_guide_app/core/widgets/text/custome_text.dart';
 
 import '../../../../core/constants/app_images.dart';
@@ -11,9 +12,9 @@ class FeatureImage extends StatelessWidget {
     return Stack(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 25),
+          padding: EdgeInsets.symmetric(horizontal: 25.h, vertical: 25.h),
           child: Container(
-            height: MediaQuery.of(context).size.height * 0.18,
+            height: MediaQuery.of(context).size.height * 0.23,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: Theme.of(context).colorScheme.primary,
