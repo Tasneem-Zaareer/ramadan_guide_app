@@ -28,10 +28,12 @@ class AppImages {
   static const String helloRamadan = 'assets/images/helloRamadan.png';
   static const String cloud = 'assets/images/cloud.png';
   static const String zakat = 'assets/images/zakat.png';
-  static const String gifts = 'assets/images/gifts.png';
   static const String eid = 'assets/images/eid.png';
+  static const String gifts = 'assets/images/gifts.png';
+  static const String giftsCover = 'assets/images/gifts_cover.png';
 
   static const String giftsTransparent = 'assets/images/gifts_transparent.png';
+
   static const String whiteMosque = 'assets/images/mosque_white.png';
   static const String whiteMosqueWithoutClouds =
       'assets/images/mosque_white2.png';
@@ -42,4 +44,6 @@ class AppImages {
   static const String mosqueSmall = 'assets/images/mosque_small.png';
   static const String twoMen = 'assets/images/two_men.png';
   static const String twoMenBk = 'assets/images/two_men_bk.png';
+  static const String menDates = 'assets/images/men_dates.png';
+  static const String couple = 'assets/images/couple.png';
 }

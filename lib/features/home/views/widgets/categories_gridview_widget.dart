@@ -45,7 +45,7 @@ class CategoriesGridviewWidget extends StatelessWidget {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       itemCount: categoriesList.length,
-      padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 10.h),
+      padding: EdgeInsets.symmetric(horizontal: 25.h, vertical: 10.h),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         mainAxisSpacing: 10,
         crossAxisSpacing: 10,

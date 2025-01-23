@@ -13,8 +13,8 @@ class OnboardingView1 extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 300,
-            width: 120,
+            height: MediaQuery.of(context).size.height * 0.35,
+            width: MediaQuery.of(context).size.height * 0.15,
             child: Image.asset(
               AppImages.lantern,
               fit: BoxFit.cover,
@@ -25,7 +25,7 @@ class OnboardingView1 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Container(
-                width: 200,
+                width: MediaQuery.of(context).size.height * 0.24,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -47,10 +47,10 @@ class OnboardingView1 extends StatelessWidget {
           ),
           const Spacer(flex: 1),
           Container(
-            height: 350,
-            width: 250,
+            height: MediaQuery.of(context).size.height * 0.35,
+            width: MediaQuery.of(context).size.height * 0.3,
             child: Image.asset(
-              AppImages.boyWithLantern,
+              AppImages.menDates,
               fit: BoxFit.contain,
             ),
           ),

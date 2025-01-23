@@ -41,7 +41,7 @@ class GiftsWidget extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: Image.asset(
-                  AppImages.giftsTransparent,
+                  AppImages.giftsCover,
                   fit: BoxFit.cover,
                   height: MediaQuery.of(context).size.height * 0.17,
                   width: double.infinity,
@@ -49,26 +49,25 @@ class GiftsWidget extends StatelessWidget {
               ),
             ),
             Positioned(
-              left: 0,
-              right: 0,
-              top: 0,
-              bottom: 0,
+              // left: 0,
+              // right: 0,
+              // top: 0,
+              // bottom: 0,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   CustomText(
-                    // text: tr('ramadanGiftsIdeas'),
                     text: tr('ramadanGifts'),
                     color: Theme.of(context).colorScheme.onPrimary,
                     fontSize: 20.sp,
+                    textAlign: TextAlign.start,
                   ),
-                  CustomText(
-                    // text: tr('ramadanGiftsIdeas'),
-                    text: tr('ideas'),
-                    color: Theme.of(context).colorScheme.onPrimary,
-                    fontSize: 20.sp,
-                  ),
+                  // CustomText(
+                  //   text: tr('ideas'),
+                  //   color: Theme.of(context).colorScheme.onPrimary,
+                  //   fontSize: 20.sp,
+                  // ),
                 ],
               ),
             )

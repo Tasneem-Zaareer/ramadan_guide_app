@@ -12,7 +12,7 @@ class FeatureImage extends StatelessWidget {
     return Stack(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25.h, vertical: 25.h),
+          padding: EdgeInsets.symmetric(horizontal: 25.h, vertical: 10.h),
           child: Container(
             height: MediaQuery.of(context).size.height * 0.23,
             decoration: BoxDecoration(

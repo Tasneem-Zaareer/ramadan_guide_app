@@ -21,9 +21,9 @@ class EidView extends StatelessWidget {
             Theme.of(context).colorScheme.secondary.withOpacity(0.8),
       },
       {
-        'activityName': tr('eidDua'),
+        'activityName': tr('eidDuaGteeting'),
         'view': const EidDuaView(),
-        'activityImage': AppImages.dua,
+        'activityImage': AppImages.twoMen,
         'activityColor':
             Theme.of(context).colorScheme.secondary.withOpacity(0.6),
       },
@@ -84,7 +84,7 @@ class EidActivityWidget extends StatelessWidget {
     return GestureDetector(
       onTap: () => onTap(),
       child: Container(
-        margin:  EdgeInsets.symmetric(horizontal: 20.h, vertical: 10),
+        margin: EdgeInsets.symmetric(horizontal: 20.h, vertical: 10),
         padding: EdgeInsets.only(left: 15.h, right: 15.h, top: 10.h),
         height: MediaQuery.of(context).size.height * 0.15,
         decoration: BoxDecoration(

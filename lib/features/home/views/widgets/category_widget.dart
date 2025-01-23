@@ -47,7 +47,7 @@ class Category extends StatelessWidget {
                 SizedBox(height: 10.h),
                 Image.asset(
                   categoryImage,
-                  height: MediaQuery.of(context).size.height * 0.14,
+                  height: MediaQuery.of(context).size.height * 0.13,
                   fit: BoxFit.cover,
                 ),
               ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ramadan_guide_app/core/widgets/text/custome_text.dart';
 
 class SadaqahAlFitrView extends StatelessWidget {
@@ -7,7 +8,7 @@ class SadaqahAlFitrView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Map<String, dynamic> sadaqahAlFitrMapInfo = {
-      'title': 'Sadaqah al-Fitr (Zakat al-Fitr)',
+      'title': 'Sadaqah al-Fitr',
       'purpose': [
         'Purification: Sadaqah al-Fitr is a way to purify the fast from any imperfections or shortcomings. It helps cleanse the soul and the fast from any inappropriate behavior, ensuring the fast is accepted by Allah.',
         'Help for the Needy: It provides those who are less fortunate the ability to join in the celebrations of Eid, ensuring that they have enough to eat and can take part in the joyous occasion.'
@@ -44,28 +45,95 @@ class SadaqahAlFitrView extends StatelessWidget {
     };
 
     return Scaffold(
-        appBar: AppBar(),
-        body: SafeArea(
-            child: ListView.builder(
-          padding: EdgeInsets.symmetric(horizontal: 25),
-          physics: NeverScrollableScrollPhysics(),
-          shrinkWrap: true,
-          itemCount: 5,
-          itemBuilder: (BuildContext context, int index) {
-            return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              child: Column(
-                children: [
-                  CustomText(
-                    text: sadaqahAlFitrMapInfo['title'],
-                    fontSize: 20,
-                    fontWeight: FontWeight.w900,
-                    color: Theme.of(context).colorScheme.onSurface,
-                  )
-                ],
-              ),
-            );
-          },
-        )));
+      appBar: AppBar(),
+      body: SafeArea(
+        //   child: ListView.builder(
+        // padding: EdgeInsets.symmetric(horizontal: 25),
+        // physics: NeverScrollableScrollPhysics(),
+        // shrinkWrap: true,
+        // itemCount: 5,
+        // itemBuilder: (BuildContext context, int index) {
+        //   return Padding(
+        //     padding: const EdgeInsets.symmetric(vertical: 10),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.h),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                // InfoWidget(
+                //   text: sadaqahAlFitrMapInfo['title'],
+                //   color: Theme.of(context).colorScheme.surface,
+                // ),
+
+                InfoWidget(
+                  text: sadaqahAlFitrMapInfo['purpose'][0],
+                  color: Theme.of(context).colorScheme.primary.withOpacity(0.9),
+                ),
+
+                InfoWidget(
+                  text: sadaqahAlFitrMapInfo['obligation'][0],
+                  color: Theme.of(context).colorScheme.primary.withOpacity(0.7),
+                ),
+                InfoWidget(
+                  text: sadaqahAlFitrMapInfo['amount'][0],
+                  color: Theme.of(context).colorScheme.primary.withOpacity(0.5),
+                ),
+
+                InfoWidget(
+                  text: sadaqahAlFitrMapInfo['time_to_pay'][0],
+                  color: Theme.of(context).colorScheme.primary.withOpacity(0.4),
+                ),
+
+                InfoWidget(
+                  text: sadaqahAlFitrMapInfo['how_to_pay'][0],
+                  color: Theme.of(context).colorScheme.primary.withOpacity(0.2),
+                ),
+
+                // CustomText(
+                //   text: sadaqahAlFitrMapInfo['benefits'],
+                //   fontSize: 16,
+                //   color: Theme.of(context).colorScheme.onSurface,
+                // ),
+                // SizedBox(height: 10.h),
+                InfoWidget(
+                  text: sadaqahAlFitrMapInfo['conclusion'],
+                  color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+      //     },
+    );
+    // ));
+  }
+}
+
+class InfoWidget extends StatelessWidget {
+  const InfoWidget({
+    super.key,
+    required this.text,
+    required this.color,
+  });
+
+  final String text;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(10.h),
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: CustomText(
+        text: text,
+        fontSize: 16,
+        color: Theme.of(context).colorScheme.onSurface,
+      ),
+    );
   }
 }
