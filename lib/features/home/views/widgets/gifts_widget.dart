@@ -48,10 +48,18 @@ class GiftsWidget extends StatelessWidget {
                 ),
               ),
             ),
+            Container(
+              height: MediaQuery.of(context).size.height * 0.17,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Theme.of(context).colorScheme.secondary.withOpacity(0.4),
+              ),
+            ),
             Positioned(
-              // left: 0,
-              // right: 0,
-              // top: 0,
+              left: 0,
+              right: 0,
+              top: 10,
               // bottom: 0,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -60,14 +68,15 @@ class GiftsWidget extends StatelessWidget {
                   CustomText(
                     text: tr('ramadanGifts'),
                     color: Theme.of(context).colorScheme.onPrimary,
-                    fontSize: 20.sp,
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w900,
                     textAlign: TextAlign.start,
                   ),
-                  // CustomText(
-                  //   text: tr('ideas'),
-                  //   color: Theme.of(context).colorScheme.onPrimary,
-                  //   fontSize: 20.sp,
-                  // ),
+                  CustomText(
+                    text: tr('IDEAS'),
+                    color: Theme.of(context).colorScheme.onPrimary,
+                    fontSize: 27.sp,
+                  ),
                 ],
               ),
             )
