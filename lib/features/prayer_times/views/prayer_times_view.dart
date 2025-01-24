@@ -173,14 +173,6 @@ class TodayRamadanTimeItem extends StatelessWidget {
 class PrayerTimeList extends StatelessWidget {
   const PrayerTimeList({super.key});
 
-  static final List<Map<String, dynamic>> prayerTimesList = [
-    {'name': tr('fajr'), 'time': '5:00 AM', 'icon': Icons.circle},
-    {'name': tr('dhuhr'), 'time': '12:00 PM', 'icon': Icons.sunny},
-    {'name': tr('asr'), 'time': '3:00 PM', 'icon': Icons.wb_sunny},
-    {'name': tr('maghrib'), 'time': '5:00 PM', 'icon': Icons.cloud},
-    {'name': tr('isha'), 'time': '6:00 PM', 'icon': Icons.bedtime},
-  ];
-
   @override
   Widget build(BuildContext context) {
     final cubit = context.read<PrayerTimesCubit>();
@@ -191,9 +183,29 @@ class PrayerTimeList extends StatelessWidget {
           child: Column(
             children: [
               PrayerTimeItem(
-                prayerName: state.prayerTimesResponse.data.timings.fajr,
+                prayerName: tr('fajr'),
                 prayertime: state.prayerTimesResponse.data.timings.fajr,
-                icoon: Icons.abc,
+                icoon: Icons.circle,
+              ),
+              PrayerTimeItem(
+                prayerName: tr('dhuhr'),
+                prayertime: state.prayerTimesResponse.data.timings.dhuhr,
+                icoon: Icons.sunny,
+              ),
+              PrayerTimeItem(
+                prayerName: tr('asr'),
+                prayertime: state.prayerTimesResponse.data.timings.asr,
+                icoon: Icons.wb_sunny,
+              ),
+              PrayerTimeItem(
+                prayerName: tr('maghrib'),
+                prayertime: state.prayerTimesResponse.data.timings.maghrib,
+                icoon: Icons.cloud,
+              ),
+              PrayerTimeItem(
+                prayerName: tr('isha'),
+                prayertime: state.prayerTimesResponse.data.timings.isha,
+                icoon: Icons.bedtime,
               ),
             ],
           ));
