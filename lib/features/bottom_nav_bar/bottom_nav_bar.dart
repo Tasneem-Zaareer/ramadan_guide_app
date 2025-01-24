@@ -12,11 +12,8 @@ class BottomNavBar extends StatelessWidget {
   List<Widget> _buildScreens() {
     return [
       const HomeView(),
-      // const Center(child: Text("Search Page")),
       const Center(child: Text("Calender Page")),
-      const Center(child: Text("Eid Page")),
       const Center(child: Text("Qibla Page")),
-      const Center(child: Text("Profile Page")),
     ];
   }
 
@@ -28,36 +25,19 @@ class BottomNavBar extends StatelessWidget {
         activeColorPrimary: Theme.of(context).colorScheme.tertiary,
         inactiveColorPrimary: Theme.of(context).colorScheme.tertiaryContainer,
       ),
-      // PersistentBottomNavBarItem(
-      //   icon: const Icon(Icons.search),
-      //   title: (tr('search')),
-      //   activeColorPrimary: Theme.of(context).colorScheme.tertiary,
-      //   inactiveColorPrimary: Theme.of(context).colorScheme.tertiaryContainer,
-      // ),
+ 
       PersistentBottomNavBarItem(
         icon: const Icon(Icons.calendar_month),
         title: (tr('calendar')),
         activeColorPrimary: Theme.of(context).colorScheme.tertiary,
         inactiveColorPrimary: Theme.of(context).colorScheme.tertiaryContainer,
       ),
-      PersistentBottomNavBarItem(
-        icon: const Icon(Icons.celebration),
-        title: (tr('eid')),
-        activeColorPrimary: Theme.of(context).colorScheme.tertiary,
-        inactiveColorPrimary: Theme.of(context).colorScheme.tertiaryContainer,
-      ),
+ 
       PersistentBottomNavBarItem(
         icon: const Icon(Icons.explore),
         title: (tr('qibla')),
         activeColorPrimary: Theme.of(context).colorScheme.tertiary,
         inactiveColorPrimary: Theme.of(context).colorScheme.tertiaryContainer,
-      ),
-      PersistentBottomNavBarItem(
-        icon: const Icon(Icons.person),
-        title: (tr('profile')),
-        activeColorPrimary: Theme.of(context).colorScheme.tertiary,
-        inactiveColorPrimary:
-            Theme.of(context).colorScheme.onSurface.withOpacity(0.2),
       ),
     ];
   }
