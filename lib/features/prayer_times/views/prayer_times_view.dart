@@ -1,21 +1,49 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ramadan_guide_app/core/di/dependency_injection_service.dart';
 import 'package:ramadan_guide_app/core/widgets/text/custome_text.dart';
 import '../../../core/constants/app_images.dart';
+import '../../../core/model/location_model.dart';
+import '../view_model/cubit.dart';
 
 class PrayerTimeView extends StatelessWidget {
-  const PrayerTimeView({super.key});
+  const PrayerTimeView({super.key, required this.locationModel});
+
+  final LocationModel? locationModel;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          FeatureImagePrayerTime(),
-          TodayRamadanTimeWidget(),
-          PrayerTimeList(),
-        ],
+    return BlocProvider(
+      create: (context) => DependencyInjectionService.getIt<PrayerTimesCubit>()
+        ..getPrayerTimes(
+          locationModel ?? LocationModel(),
+        ),
+      child: Scaffold(
+        body: BlocBuilder<PrayerTimesCubit, PrayerTimesState>(
+          builder: (context, state) {
+            if (state is PrayerTimesError) {
+              return Center(
+                child: Text(
+                  state.errorMessage,
+                ),
+              );
+            } else if (state is PrayerTimesLoading) {
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+            } else {
+              return Column(
+                children: [
+                  FeatureImagePrayerTime(),
+                  TodayRamadanTimeWidget(),
+                  PrayerTimeList(),
+                ],
+              );
+            }
+          },
+        ),
       ),
     );
   }
@@ -71,22 +99,20 @@ class TodayRamadanTimeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          TodayRamadanTimeItem(
-            title: tr('sahoor'),
-            time: '5:00 AM',
-            icon: (Icons.sunny),
-          ),
-          TodayRamadanTimeItem(
-            title: tr('iftar'),
-            time: '6:30 PM',
-            icon: (Icons.cloud),
-          ),
-        ],
-      ),
+    return Row(
+      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        TodayRamadanTimeItem(
+          title: tr('sahoor'),
+          time: '5:00 AM',
+          icon: (Icons.sunny),
+        ),
+        TodayRamadanTimeItem(
+          title: tr('iftar'),
+          time: '6:30 PM',
+          icon: (Icons.cloud),
+        ),
+      ],
     );
   }
 }
@@ -157,22 +183,25 @@ class PrayerTimeList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 25),
-      child: ListView.builder(
-        padding: const EdgeInsets.symmetric(vertical: 10),
-        physics: const NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
-        itemCount: 5,
-        itemBuilder: (BuildContext context, int index) {
-          return PrayerTimeItem(
-            prayerName: prayerTimesList[index]['name'],
-            prayertime: prayerTimesList[index]['time'],
-            icoon: prayerTimesList[index]['icon'],
-          );
-        },
-      ),
-    );
+    final cubit = context.read<PrayerTimesCubit>();
+    final state = cubit.state;
+    if (state is PrayerTimesSuccess) {
+      return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25),
+          child: Column(
+            children: [
+              PrayerTimeItem(
+                prayerName: state.prayerTimesResponse.data.timings.fajr,
+                prayertime: state.prayerTimesResponse.data.timings.fajr,
+                icoon: Icons.abc,
+              ),
+            ],
+          ));
+    } else {
+      return const Center(
+        child: CircularProgressIndicator(),
+      );
+    }
   }
 }
 
@@ -191,7 +220,7 @@ class PrayerTimeItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding:  EdgeInsets.symmetric(horizontal: 20.h, vertical: 10),
+      padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 10),
       margin: const EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),

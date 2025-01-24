@@ -1,13 +1,14 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ramadan_guide_app/features/home/views/home_view.dart';
+import 'package:ramadan_guide_app/core/di/dependency_injection_service.dart';
 import 'package:ramadan_guide_app/features/onboarding/views/onboarding_control.dart';
 import 'core/constants/theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  DependencyInjectionService.setupDependencies();
   runApp(
     EasyLocalization(
       supportedLocales: const [Locale('en'), Locale('ar')],

@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:ramadan_guide_app/core/widgets/text/custome_text.dart';
 import 'package:ramadan_guide_app/features/ramadan_gifts/views/gifts_view.dart';
-import 'package:ramadan_guide_app/features/ramadan_quiz/views/quiz_welcom_view.dart';
 import '../../../../core/constants/app_images.dart';
 
 class GiftsWidget extends StatelessWidget {
@@ -13,7 +12,7 @@ class GiftsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 10.h),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
       child: GestureDetector(
         onTap: () => {
           PersistentNavBarNavigator.pushNewScreen(

@@ -12,7 +12,7 @@ class OnboardingView2 extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height * 0.35,
             width: MediaQuery.of(context).size.height * 0.15,
             child: Image.asset(
@@ -24,7 +24,7 @@ class OnboardingView2 extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.height * 0.24,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,7 +46,7 @@ class OnboardingView2 extends StatelessWidget {
             ],
           ),
           Spacer(flex: 1),
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height * 0.32,
             width: MediaQuery.of(context).size.height * 0.37,
             child: Image.asset(

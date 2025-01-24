@@ -25,16 +25,14 @@ class OnboardingControl extends StatelessWidget {
             Positioned(
               top: 70,
               right: 20,
-              child: Container(
-                child: Row(
-                  children: [
-                    const Icon(Icons.language),
-                    CustomText(
-                      text: 'Language',
-                      color: Theme.of(context).colorScheme.onSurface,
-                    )
-                  ],
-                ),
+              child: Row(
+                children: [
+                  const Icon(Icons.language),
+                  CustomText(
+                    text: 'Language',
+                    color: Theme.of(context).colorScheme.onSurface,
+                  )
+                ],
               ),
             ),
             Positioned(

@@ -35,17 +35,13 @@ class DeclarationView extends StatelessWidget {
                   maxLines: 20,
                 ),
                 SizedBox(height: 25),
-                Container(
-                  // height: 10,
-                  // width: 10,
-                  child: CustomButton(
-                    title: 'Got it 🤍',
-                    background: Theme.of(context).colorScheme.primary,
-                    textColor: Colors.white,
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                  ),
+                CustomButton(
+                  title: 'Got it 🤍',
+                  background: Theme.of(context).colorScheme.primary,
+                  textColor: Colors.white,
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
                 )
               ],
             ),

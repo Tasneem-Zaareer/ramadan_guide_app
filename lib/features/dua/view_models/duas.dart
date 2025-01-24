@@ -116,8 +116,7 @@ const List<Map<String, String>> duasList = [
   {
     "name": "Dua for the Parents",
     "arabic": "اللَّهُمَّ اجْعَلْ وَالِدِيَّ فِي الْجَنَّةِ",
-    "translation":
-        "O Allah, make my parents among the people of Jannah (Paradise).",
+    "translation": "O Allah, make my parents among the people of Jannah (Paradise).",
     "reference": "Sahih Muslim",
     "icon": "Icons.person"
   },
@@ -261,8 +260,6 @@ Icon getIconFromString(String iconName) {
       return const Icon(Icons.flag);
     case 'Icons.favorite_border':
       return const Icon(Icons.favorite_border);
-    case 'Icons.access_alarm':
-      return const Icon(Icons.access_alarm);
     case 'Icons.water_drop':
       return const Icon(Icons.water_drop);
     case 'Icons.wedding':

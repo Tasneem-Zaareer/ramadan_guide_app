@@ -30,12 +30,7 @@ class RamadanQuizWelcomeView extends StatelessWidget {
                 fontSize: 36,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
-                shadows: [
-                  Shadow(
-                      color: Colors.black.withOpacity(0.5),
-                      offset: const Offset(2, 2),
-                      blurRadius: 5)
-                ],
+                shadows: [Shadow(color: Colors.black.withOpacity(0.5), offset: const Offset(2, 2), blurRadius: 5)],
               ),
 
               const SizedBox(height: 10),
@@ -56,15 +51,14 @@ class RamadanQuizWelcomeView extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const QuizQuestionView()),
+                    MaterialPageRoute(builder: (context) => const QuizQuestionView()),
                   );
                 },
               ),
               const SizedBox(height: 10),
               CustomButton(
                 width: 200,
-                background: Theme.of(context).colorScheme.background,
+                background: Theme.of(context).colorScheme.surface,
                 title: tr('home'),
                 fontSize: 20,
                 textColor: Theme.of(context).colorScheme.primary,

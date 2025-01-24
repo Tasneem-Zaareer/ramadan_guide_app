@@ -26,8 +26,7 @@ class DuaView extends StatelessWidget {
           itemBuilder: (context, index) => DuaWigget(
             duaTitle: duasList[index]['name'] ?? tr('dua'),
             duaImage: AppImages.featureMosque,
-            duaIcon:
-                getIconFromString(duasList[index]['icon'] ?? 'Icons.warning'),
+            duaIcon: getIconFromString(duasList[index]['icon'] ?? 'Icons.warning'),
             arabicTranslation: duasList[index]['arabic'] ?? tr('dua'),
             englishTranslation: duasList[index]['translation'] ?? tr('dua'),
           ),
@@ -78,7 +77,7 @@ class DuaWigget extends StatelessWidget {
               color: Theme.of(context).colorScheme.primary,
               borderRadius: BorderRadius.circular(10),
             ),
-            child: Container(
+            child: SizedBox(
               height: MediaQuery.of(context).size.height * 0.1,
               width: MediaQuery.of(context).size.height * 0.1,
               child: duaIcon,

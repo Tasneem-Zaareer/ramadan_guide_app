@@ -12,7 +12,7 @@ class OnboardingView1 extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height * 0.35,
             width: MediaQuery.of(context).size.height * 0.15,
             child: Image.asset(
@@ -24,7 +24,7 @@ class OnboardingView1 extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.height * 0.24,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,8 +36,7 @@ class OnboardingView1 extends StatelessWidget {
                       color: Theme.of(context).colorScheme.onSurface,
                     ),
                     CustomText(
-                      text:
-                          'In Ramadan, every act of kindness becomes a bridge to countless blessings.',
+                      text: 'In Ramadan, every act of kindness becomes a bridge to countless blessings.',
                       color: Theme.of(context).colorScheme.onSurface,
                     ),
                   ],
@@ -46,7 +45,7 @@ class OnboardingView1 extends StatelessWidget {
             ],
           ),
           const Spacer(flex: 1),
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height * 0.35,
             width: MediaQuery.of(context).size.height * 0.3,
             child: Image.asset(

@@ -18,7 +18,7 @@ class CustomText extends StatelessWidget {
   final List<Shadow>? shadows;
 
   const CustomText({
-    Key? key,
+    super.key,
     required this.text,
     this.fontSize = 16,
     this.color,
@@ -31,7 +31,7 @@ class CustomText extends StatelessWidget {
     this.textOverflow,
     this.textDirection = TextDirection.ltr,
     this.shadows,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -4,10 +4,10 @@ class QuizQuestionView extends StatefulWidget {
   const QuizQuestionView({super.key});
 
   @override
-  _QuizScreenState createState() => _QuizScreenState();
+  QuizScreenState createState() => QuizScreenState();
 }
 
-class _QuizScreenState extends State<QuizQuestionView> {
+class QuizScreenState extends State<QuizQuestionView> {
   int _currentQuestionIndex = 0; // To keep track of the current question
   int? _selectedAnswer; // To store the selected answer
 
@@ -28,8 +28,7 @@ class _QuizScreenState extends State<QuizQuestionView> {
       'answer': 1, // Correct answer index
     },
     {
-      'question':
-          'Which prayer is performed during the month of Ramadan after sunset?',
+      'question': 'Which prayer is performed during the month of Ramadan after sunset?',
       'options': ['Fajr', 'Dhuhr', 'Maghrib'],
       'answer': 2, // Correct answer index
     },
@@ -94,18 +93,15 @@ class _QuizScreenState extends State<QuizQuestionView> {
             Center(
               child: ElevatedButton(
                 onPressed: _nextQuestion,
-                child: Text(
-                  _currentQuestionIndex < _questions.length - 1
-                      ? 'Next Question'
-                      : 'Finish Quiz',
-                ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.amber,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
+                ),
+                child: Text(
+                  _currentQuestionIndex < _questions.length - 1 ? 'Next Question' : 'Finish Quiz',
                 ),
               ),
             ),

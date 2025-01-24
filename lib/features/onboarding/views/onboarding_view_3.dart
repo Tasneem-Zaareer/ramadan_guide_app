@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ramadan_guide_app/core/constants/app_images.dart';
 import 'package:ramadan_guide_app/core/widgets/text/custome_text.dart';
 
@@ -13,7 +12,7 @@ class OnboardingView3 extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height * 0.35,
             width: MediaQuery.of(context).size.height * 0.15,
             child: Image.asset(
@@ -25,7 +24,7 @@ class OnboardingView3 extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.height * 0.24,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,8 +36,7 @@ class OnboardingView3 extends StatelessWidget {
                       color: Theme.of(context).colorScheme.onSurface,
                     ),
                     CustomText(
-                      text:
-                          'A time to cultivate kindness, compassion, and extend mercy to all of creation.',
+                      text: 'A time to cultivate kindness, compassion, and extend mercy to all of creation.',
                       color: Theme.of(context).colorScheme.onSurface,
                     ),
                   ],
@@ -50,7 +48,7 @@ class OnboardingView3 extends StatelessWidget {
           Transform(
             alignment: Alignment.center,
             transform: Matrix4.identity()..scale(-1.0, 1.0),
-            child: Container(
+            child: SizedBox(
               height: MediaQuery.of(context).size.height * 0.37,
               width: MediaQuery.of(context).size.height * 0.32,
               child: Image.asset(
