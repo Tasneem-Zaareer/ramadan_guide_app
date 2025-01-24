@@ -2,10 +2,10 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import '../home/views/home_view.dart';
+import '../qibla/view/qibla_view.dart';
 
 class BottomNavBar extends StatelessWidget {
-  final PersistentTabController _controller =
-      PersistentTabController(initialIndex: 0);
+  final PersistentTabController _controller = PersistentTabController(initialIndex: 0);
 
   BottomNavBar({super.key});
 
@@ -15,7 +15,7 @@ class BottomNavBar extends StatelessWidget {
       // const Center(child: Text("Search Page")),
       const Center(child: Text("Calender Page")),
       const Center(child: Text("Eid Page")),
-      const Center(child: Text("Qibla Page")),
+      QiblahCompass(),
       const Center(child: Text("Profile Page")),
     ];
   }
@@ -56,8 +56,7 @@ class BottomNavBar extends StatelessWidget {
         icon: const Icon(Icons.person),
         title: (tr('profile')),
         activeColorPrimary: Theme.of(context).colorScheme.tertiary,
-        inactiveColorPrimary:
-            Theme.of(context).colorScheme.onSurface.withOpacity(0.2),
+        inactiveColorPrimary: Theme.of(context).colorScheme.onSurface.withOpacity(0.2),
       ),
     ];
   }
