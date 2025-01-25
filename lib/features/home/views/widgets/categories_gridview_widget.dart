@@ -29,8 +29,18 @@ class CategoriesGridviewWidget extends StatelessWidget {
         'view': const LaylatAlQadrView(),
         'color': Colors.redAccent.shade100
       },
-      {'title': tr('dua'), 'image': AppImages.dua, 'view': const DuaView(), 'color': Colors.blue.shade100},
-      {'title': tr('eid'), 'image': AppImages.twoMen, 'view': const EidView(), 'color': Colors.greenAccent.shade100},
+      {
+        'title': tr('dua'),
+        'image': AppImages.dua,
+        'view': const DuaView(),
+        'color': Colors.blue.shade100,
+      },
+      {
+        'title': tr('eid'),
+        'image': AppImages.twoMen,
+        'view': const EidView(),
+        'color': Colors.greenAccent.shade100,
+      },
     ];
     return GridView.builder(
       shrinkWrap: true,

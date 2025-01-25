@@ -11,7 +11,7 @@ ThemeData lightMode = ThemeData(
     secondary: Color.fromARGB(255, 42, 10, 146),
     onSecondary: Color.fromARGB(255, 255, 255, 255),
     primaryContainer: Color.fromARGB(255, 162, 194, 226),
-    // outline: const Color(0xffEBECF1),
+    outline: Colors.amberAccent,
     // secondaryContainer: const Color(0xfff43f5e),
     tertiary: Color.fromARGB(255, 123, 155, 186), //active
     tertiaryContainer: Color.fromARGB(255, 197, 197, 197), //inactive
