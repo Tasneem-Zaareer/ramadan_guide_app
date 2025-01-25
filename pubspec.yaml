@@ -53,6 +53,8 @@ dependencies:
   flutter_qiblah: ^3.0.4
   sensors_plus: ^6.1.1
   flutter_svg: ^2.0.17
+  flutter_calendar_carousel: ^2.4.4
+
 
 
 dev_dependencies:

@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
+import '../calendar/view/calendar_view.dart';
 import '../home/views/home_view.dart';
 import '../qibla/view/qibla_view.dart';
 
@@ -13,7 +14,7 @@ class BottomNavBar extends StatelessWidget {
     return [
       const HomeView(),
       // const Center(child: Text("Search Page")),
-      const Center(child: Text("Calender Page")),
+      CalendarView(),
       const Center(child: Text("Eid Page")),
       QiblahCompass(),
       const Center(child: Text("Profile Page")),
