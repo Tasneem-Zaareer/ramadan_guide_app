@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ramadan_guide_app/core/constants/app_images.dart';
 import 'package:ramadan_guide_app/core/widgets/buttons/custom_button.dart';
 import 'package:ramadan_guide_app/core/widgets/text/custome_text.dart';
@@ -10,6 +11,25 @@ class RamadanQuizWelcomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // final List<Map<String, dynamic>> quizList = [
+    //   {
+    //     'image': AppImages.umrah,
+    //   }
+    // ];
+
+    final List<String> quizList = [
+      AppImages.girlWithLantern,
+      AppImages.zakat,
+      AppImages.boyPray,
+      AppImages.boyWithLantern,
+      AppImages.girlWithMoon,
+      AppImages.couple,
+      AppImages.dua,
+      AppImages.twoMen,
+      AppImages.mosqueSmall,
+      AppImages.eid,
+    ];
+
     return Scaffold(
       body: Stack(
         fit: StackFit.expand,
@@ -22,55 +42,134 @@ class RamadanQuizWelcomeView extends StatelessWidget {
             color: Colors.black.withOpacity(0.5),
           ),
           Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              SizedBox(height: 50.h),
               CustomText(
                 text: tr('ramadanQuiz'),
                 fontSize: 36,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
-                shadows: [Shadow(color: Colors.black.withOpacity(0.5), offset: const Offset(2, 2), blurRadius: 5)],
+                shadows: [
+                  Shadow(
+                      color: Colors.black.withOpacity(0.5),
+                      offset: const Offset(2, 2),
+                      blurRadius: 5)
+                ],
               ),
-
               const SizedBox(height: 10),
               CustomText(
                 text: tr('testYourKnowledgeOfRamadan'),
                 fontSize: 18,
                 color: Colors.white,
               ),
-
               const SizedBox(height: 30),
-              // Start Button
-              CustomButton(
+              Expanded(
+                child: GridView.builder(
+                  itemCount: 10,
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 15.h, vertical: 10.h),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 3,
+                    childAspectRatio: 1,
+                    mainAxisSpacing: 15.h,
+                    // crossAxisSpacing: 10,
+                  ),
+                  itemBuilder: (context, index) => QuizLevelWidget(
+                    levelNum: index + 1,
+                    image: quizList[index],
+                  ),
+                ),
+              )
+            ],
+          ),
+          // Final quiz Button
+          Positioned(
+            bottom: 25.h,
+            left: 0,
+            right: 0,
+            // top: 0,
+            child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 20.h),
+              child: CustomButton(
                 width: 200,
-                background: Theme.of(context).colorScheme.tertiary,
-                title: tr('startQuiz'),
+                background: Theme.of(context).colorScheme.outline,
+                title: tr('startFinalQuiz'),
+                textColor: Theme.of(context).colorScheme.secondary,
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const QuizQuestionView()),
+                    MaterialPageRoute(
+                        builder: (context) => const QuizQuestionView()),
                   );
                 },
               ),
-              const SizedBox(height: 10),
-              CustomButton(
-                width: 200,
-                background: Theme.of(context).colorScheme.surface,
-                title: tr('home'),
-                fontSize: 20,
-                textColor: Theme.of(context).colorScheme.primary,
-                fontWeight: FontWeight.bold,
-                onPressed: () {
-                  Navigator.pop(context);
-                },
+            ),
+          ),
+          Positioned(
+            left: 20.h,
+            top: 50.h,
+            child: GestureDetector(
+              onTap: () => Navigator.pop(context),
+              child: const Icon(
+                Icons.arrow_back_ios,
+                color: Colors.white,
+                size: 30,
               ),
-            ],
+            ),
           ),
         ],
       ),
+    );
+  }
+}
+
+class QuizLevelWidget extends StatelessWidget {
+  const QuizLevelWidget({
+    super.key,
+    required this.levelNum,
+    required this.image,
+  });
+
+  final int levelNum;
+  final String image;
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Container(
+          height: MediaQuery.of(context).size.height * 0.15,
+          width: MediaQuery.of(context).size.height * 0.15,
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.primary.withOpacity(0.2),
+            // borderRadius: BorderRadius.circular(10),
+            shape: BoxShape.circle,
+          ),
+          margin: const EdgeInsets.symmetric(horizontal: 10),
+          child: CustomText(
+            text: levelNum.toString(),
+            fontSize: 12.sp,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+        Positioned(
+          bottom: 0.h,
+          left: 12,
+          // right: 0,
+          top: 0,
+          child: Image.asset(
+            image,
+            // fit: BoxFit.cover,
+            height: MediaQuery.of(context).size.height * 0.1,
+            width: MediaQuery.of(context).size.height * 0.1,
+          ),
+        ),
+      ],
     );
   }
 }
