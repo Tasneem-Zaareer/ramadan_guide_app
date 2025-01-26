@@ -18,13 +18,13 @@ class RamadanQuizWelcomeView extends StatelessWidget {
     // ];
 
     final List<String> quizList = [
-      AppImages.girlWithLantern,
-      AppImages.zakat,
-      AppImages.boyPray,
-      AppImages.boyWithLantern,
-      AppImages.girlWithMoon,
-      AppImages.couple,
+      AppImages.mosqueQuiz2,
       AppImages.dua,
+      AppImages.quranQuiz,
+      AppImages.dates,
+      AppImages.moonQuiz,
+      AppImages.couple,
+      AppImages.mosqueQuiz,
       AppImages.twoMen,
       AppImages.mosqueSmall,
       AppImages.eid,
@@ -141,6 +141,16 @@ class QuizLevelWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
+        Positioned(
+          top: 0.h,
+          right: 10.h,
+          child: Image.asset(
+            AppImages.cloud,
+            // fit: BoxFit.cover,
+            height: MediaQuery.of(context).size.height * 0.05,
+            width: MediaQuery.of(context).size.height * 0.05,
+          ),
+        ),
         Container(
           height: MediaQuery.of(context).size.height * 0.15,
           width: MediaQuery.of(context).size.height * 0.15,
@@ -159,14 +169,24 @@ class QuizLevelWidget extends StatelessWidget {
         ),
         Positioned(
           bottom: 0.h,
-          left: 12,
+          left: 20.h,
           // right: 0,
           top: 0,
           child: Image.asset(
             image,
             // fit: BoxFit.cover,
             height: MediaQuery.of(context).size.height * 0.1,
-            width: MediaQuery.of(context).size.height * 0.1,
+            width: MediaQuery.of(context).size.height * 0.08,
+          ),
+        ),
+        Positioned(
+          bottom: 10.h,
+          left: 0.h,
+          child: Image.asset(
+            AppImages.cloud,
+            // fit: BoxFit.cover,
+            height: MediaQuery.of(context).size.height * 0.05,
+            width: MediaQuery.of(context).size.height * 0.05,
           ),
         ),
       ],

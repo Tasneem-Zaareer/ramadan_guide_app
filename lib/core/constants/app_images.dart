@@ -46,4 +46,13 @@ class AppImages {
   static const String twoMenBk = 'assets/images/two_men_bk.png';
   static const String menDates = 'assets/images/men_dates.png';
   static const String couple = 'assets/images/couple.png';
+  static const String lanternQuiz = 'assets/images/lantern_quiz.png';
+  static const String lanternQuiz2 = 'assets/images/lantern_quiz2.png';
+
+  static const String moonQuiz = 'assets/images/moon_quiz.png';
+  static const String mosqueQuiz = 'assets/images/mosque_quiz.png';
+  static const String mosqueQuiz2 = 'assets/images/mosque_quiz2.png';
+  static const String dates = 'assets/images/dates.png';
+
+  static const String quranQuiz = 'assets/images/quran_quiz.png';
 }
