@@ -24,7 +24,9 @@ class QuizLevelQuestionView extends StatelessWidget {
                   text:
                       'To dynamically generate the quizList based on the images list and adjust the title accordingly?',
                   color: Theme.of(context).colorScheme.onSurface,
-                  fontSize: 18.sp,
+                  fontSize: 22.sp,
+                  textAlign: TextAlign.center,
+                  fontWeight: FontWeight.w900,
                 ),
               ),
             ),
